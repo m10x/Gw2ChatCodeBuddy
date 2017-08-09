@@ -22,4 +22,4 @@ Note:
 # Release notes:
 V1.0 released (9.8.2017)
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](maxx@gmx-topmail.de)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](paypal.me/LowkeyFlex)
