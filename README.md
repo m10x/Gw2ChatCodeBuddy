@@ -1,10 +1,21 @@
 # Gw2ChatCodeBuddy
 
-#Guide:
-- Choose LI from 1-250
-- Choose how often to spam from 1-10times
-- Choose time between each  spam from 0.3-1 second
-- Choose in how many seconds to start from 1-10 seconds
+# Guide:
+1. Start Gw2ChatCodeBuddy.exe
+2. Choose LI from 1-250
+3. Choose how often to spam from 1-10times
+4. Choose time between each  spam from 0.3-1 second
+5. Choose in how many seconds to start from 1-10 seconds
+(make sure you got enough time to click inside of gw2)
+(make sure chatbox isn't currently open)
+6. Click into Guild Wars 2
+7. ...
+8. Profit?
 
-#Release notes:
+# What Features will be added in the future?
+- check if new version is available
+- add kill proof spam for all bosses w1-w4
+- choose up to 499Li
+
+# Release notes:
 V1.0 released (9.8.2017)
