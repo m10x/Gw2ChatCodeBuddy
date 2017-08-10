@@ -23,7 +23,7 @@ Note:
 
 # "api-ms-win-crt-runtime-l1-1-0.dll is missing"
 install windows updates. you can also get the needed .dll with an update from here:  
-https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows
+https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows  
 tested on fresh installed win7 & 10
 
 # Release notes:
