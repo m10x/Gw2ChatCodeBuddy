@@ -17,6 +17,7 @@ Note:
 3. you only need "Gw2ChatCodeBuddy.exe" you can delete "README.md" and "version.txt"
 
 # What Features will be added in the future?
+- copy chatcode to clipboard without spamming
 - add kill proof spam for all bosses w1-w4
 - choose up to 499Li
 
