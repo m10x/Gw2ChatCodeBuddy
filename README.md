@@ -16,6 +16,8 @@ It calculates the Chat Code for a certain amount of LIs or KPs<sup>1</sup>, copi
 I'm currently learning Python and i wanted to do a script which may be useful for some people. :)  
 I use PyInstaller to pack the script into an executable. So you only have 1 file which you can easily use.
 
+[Download newest release here](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/archive/1.1.zip)
+
 <sup>1</sup>: Kill Proofs are planned to be added soon
 
 ## Guide:
