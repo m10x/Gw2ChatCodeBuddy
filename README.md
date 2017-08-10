@@ -32,5 +32,4 @@ V1.1 released (10.08.2017)
 
 V1.0 released (09.08.2017)  
 #  
-#  
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/LowkeyFlex)
