@@ -14,6 +14,7 @@
 Note: 
 1. make sure you choose enough seconds to click inside of gw2
 2. make sure you are in the right chat but that your chatbox isn't currently open
+3. you only need "Gw2ChatCodeBuddy.exe" you can delete "README.md" and "version.txt"
 
 # What Features will be added in the future?
 - check if new version is available
