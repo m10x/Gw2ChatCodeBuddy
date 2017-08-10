@@ -6,8 +6,8 @@
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
 ## Introduction
-You got (good) Raid Experience but you can't get into a raid group because you don't have enough Legendary Insights? :pensive:
-You already killed a Raid Boss but you don't have the Kill Proofs anymore? :persevere:
+You got (good) Raid Experience but you can't get into a raid group because you don't have enough Legendary Insights? :pensive:  
+You already killed a Raid Boss but you don't have the Kill Proofs anymore? :persevere:  
 You are just lazy and don't want to carry your LIs and KPs around with you and/or are too lazy to spam it? :smirk:
 
 Then Gw2ChatCodeBuddy is what you need.
