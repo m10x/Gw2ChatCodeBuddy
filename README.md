@@ -1,7 +1,7 @@
 # Gw2ChatCodeBuddy
 100% safe to use
 
-# Guide:
+## Guide:
 1. Start Gw2ChatCodeBuddy.exe
 2. Choose LI from 1-250
 3. Choose how often to spam from 1-10times
@@ -16,17 +16,17 @@ Note:
 2. make sure you are in the right chat but that your chatbox isn't currently open
 3. you only need "Gw2ChatCodeBuddy.exe" you can delete "README.md" and "version.txt"
 
-# What Features will be added in the future?
+## What Features will be added in the future?
 - copy chatcode to clipboard without spamming
 - add kill proof spam for all bosses w1-w4
 - choose up to 499Li
 
-# "api-ms-win-crt-runtime-l1-1-0.dll is missing"
+## "api-ms-win-crt-runtime-l1-1-0.dll is missing"
 install windows updates. you can also get the needed .dll with an update from here:  
 https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows  
 tested on fresh installed win7 & 10
 
-# Release notes:
+## Release notes:
 V1.1 released (10.08.2017)
 - automatically check for new version
 
