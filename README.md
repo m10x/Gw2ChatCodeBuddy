@@ -1,5 +1,4 @@
 # Gw2ChatCodeBuddy
-100% safe to use
 
 ## Guide:
 1. Start Gw2ChatCodeBuddy.exe
