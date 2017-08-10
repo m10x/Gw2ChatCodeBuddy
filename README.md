@@ -1,4 +1,7 @@
 # Gw2ChatCodeBuddy
+[![Release](https://img.shields.io/badge/release-v1.1-blue.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Size](https://img.shields.io/badge/size-9mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/LowkeyFlex)
 
 ## Guide:
 1. Start Gw2ChatCodeBuddy.exe
@@ -32,7 +35,4 @@ tested on fresh installed win7 & 10
 V1.1 released (10.08.2017)
 - automatically check for new version
 
-V1.0 released (09.08.2017)  
-#  
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/LowkeyFlex)
-[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)]()
+V1.0 released (09.08.2017)
