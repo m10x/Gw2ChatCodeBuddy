@@ -1,5 +1,3 @@
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-
 # Gw2ChatCodeBuddy
 100% safe to use
 
@@ -35,4 +33,3 @@ V1.1 released (10.08.2017)
 V1.0 released (09.08.2017)
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/LowkeyFlex)
-<a class="github-button" href="https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download LowkeyFlex/Gw2ChatCodeBuddy on GitHub">Download</a>
