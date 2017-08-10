@@ -1,3 +1,5 @@
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
 # Gw2ChatCodeBuddy
 100% safe to use
 
