@@ -1,7 +1,8 @@
 # Gw2ChatCodeBuddy
-[![Release](https://img.shields.io/badge/release-v1.1-blue.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Release](https://img.shields.io/badge/release-v1.1-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Size](https://img.shields.io/badge/size-9mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/LowkeyFlex)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
 ## Guide:
 1. Start Gw2ChatCodeBuddy.exe
