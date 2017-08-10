@@ -17,7 +17,6 @@ Note:
 3. you only need "Gw2ChatCodeBuddy.exe" you can delete "README.md" and "version.txt"
 
 # What Features will be added in the future?
-- check if new version is available
 - add kill proof spam for all bosses w1-w4
 - choose up to 499Li
 
@@ -27,6 +26,9 @@ https://support.microsoft.com/de-de/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 # Release notes:
-V1.0 released (9.8.2017)
+V1.1 released (10.08.2017)
+- automatically check for new version
+
+V1.0 released (09.08.2017)
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/LowkeyFlex)
