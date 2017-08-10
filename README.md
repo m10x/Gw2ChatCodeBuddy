@@ -13,7 +13,7 @@ You are just lazy and don't want to carry your LIs and KPs<sup>1</sup> around wi
 Then Gw2ChatCodeBuddy is what you need.
 It calculates the Chat Code for a certain amount of LIs or KPs<sup>1</sup>, copies it to the clipboard and emulates the key strokes "enter" and "left control" + "v" to post it.
 
-I'm currently learning Python and i wanted to do a script which may be useful for some people. :)
+I'm currently learning Python and i wanted to do a script which may be useful for some people. :)  
 I use PyInstaller to pack the script into an executable. So you only have 1 file which you can easily use.
 
 <sup>1</sup>: Kill Proofs are planned to be added soon
