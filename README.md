@@ -22,7 +22,7 @@ Note:
 - choose up to 499Li
 
 ## Build with
-http://www.pyinstaller.org/ - to create executable
+[PyInstaller](http://www.pyinstaller.org/) - to create executable
 
 ## "api-ms-win-crt-runtime-l1-1-0.dll is missing"
 install windows updates. you can also get the needed .dll with an update from here:  
