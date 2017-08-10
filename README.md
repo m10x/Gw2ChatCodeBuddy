@@ -2,6 +2,7 @@
 [![Release](https://img.shields.io/badge/release-v1.1-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Size](https://img.shields.io/badge/size-9mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![GW2](https://img.shields.io/badge/gw2-LowkeyFlex.8432-blue.svg)](#)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
 ## Guide:
