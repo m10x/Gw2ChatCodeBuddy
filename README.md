@@ -1,4 +1,5 @@
 # Gw2ChatCodeBuddy
+100% safe to use
 
 # Guide:
 1. Start Gw2ChatCodeBuddy.exe
@@ -12,12 +13,17 @@
 
 Note: 
 1. make sure you choose enough seconds to click inside of gw2
-2. make sure chatbox isn't currently open
+2. make sure you are in the right chat but that your chatbox isn't currently open
 
 # What Features will be added in the future?
 - check if new version is available
 - add kill proof spam for all bosses w1-w4
 - choose up to 499Li
+
+# api-ms-win-crt-runtime-l1-1-0.dll is missing
+install updates. if you get the dll with an update from here:
+https://support.microsoft.com/de-de/help/2999226/update-for-universal-c-runtime-in-windows
+tested on fresh installed win7 & 10
 
 # Release notes:
 V1.0 released (9.8.2017)
