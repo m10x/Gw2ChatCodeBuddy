@@ -49,7 +49,7 @@ https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 ## Release notes:
-V1.2 released (20.10.2017) # Had to take a break because of studying
+V1.2 released (20.10.2017) # I had to take a ~2month break because of studying
 - bug fix
 - small improvement
 
