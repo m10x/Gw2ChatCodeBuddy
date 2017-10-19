@@ -1,7 +1,7 @@
 # Gw2ChatCodeBuddy
-[![Release](https://img.shields.io/badge/release-v1.1-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Release](https://img.shields.io/badge/release-v1.2-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
-[![Size](https://img.shields.io/badge/size-9mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Size](https://img.shields.io/badge/size-9.5mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![GW2](https://img.shields.io/badge/gw2-LowkeyFlex.8432-blue.svg)](#)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
@@ -38,7 +38,7 @@ Notes:
 ## What Features are planned to be added?
 - copy chatcode to clipboard without spamming
 - add kill proof spam for all bosses w1-w4
-- choose up to 499Li
+- choose multiple stacks of LI
 
 ## Build with
 [![PyInstaller](http://www.pyinstaller.org/_downloads/pyinstaller-draft1a-35x35-trans.png)](http://www.pyinstaller.org/)  [PyInstaller](http://www.pyinstaller.org/) - to create executable
@@ -49,6 +49,10 @@ https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 ## Release notes:
+V1.2 released (20.10.2017) # Had to take a break because of studying
+- bug fix
+- small improvement
+
 V1.1 released (10.08.2017)
 - automatically check for new version
 
