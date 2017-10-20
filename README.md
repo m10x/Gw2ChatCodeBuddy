@@ -46,6 +46,10 @@ Notes:
 ## Build with
 [![PyInstaller](http://www.pyinstaller.org/_downloads/pyinstaller-draft1a-35x35-trans.png)](http://www.pyinstaller.org/)  [PyInstaller](http://www.pyinstaller.org/) - to create executable
 
+[globalhotkeys.py](https://gist.github.com/LowkeyFlex/a9a2eb296fab2106a5ae7c16b8874a4b) i forged it from [mdavey](https://gist.github.com/mdavey/6d40a89dbc15aefcc8cd) and imporved it ;)
+
+https://gist.github.com/LowkeyFlex/a9a2eb296fab2106a5ae7c16b8874a4b
+
 ## "api-ms-win-crt-runtime-l1-1-0.dll is missing"
 install windows updates. you can also get the needed .dll with an update from here:  
 https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows  
