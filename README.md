@@ -35,6 +35,9 @@ Notes:
 2. make sure you are in the right chat but that your chatbox isn't currently open
 3. you only need "Gw2ChatCodeBuddy.exe" you can delete "README.md" and "version.txt"
 
+## Currently working @
+- Use Hotkey to Post Chatcode instead of timed
+
 ## What Features are planned to be added?
 - copy chatcode to clipboard without spamming
 - add kill proof spam for all bosses w1-w4
