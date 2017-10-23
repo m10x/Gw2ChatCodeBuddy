@@ -1,7 +1,7 @@
 # Gw2ChatCodeBuddy
-[![Release](https://img.shields.io/badge/release-v2.0-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Release](https://img.shields.io/badge/release-v2.1-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
-[![Size](https://img.shields.io/badge/size-9.725mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Size](https://img.shields.io/badge/size-9.734mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![GW2](https://img.shields.io/badge/gw2-LowkeyFlex.8432-blue.svg)](#)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
@@ -22,12 +22,14 @@ I use PyInstaller to pack the script into an executable. So you only have 1 file
 
 ## Guide:
 1. Start Gw2ChatCodeBuddy.exe
-2. Choose LI from 1-250
-3. Click into Guild Wars 2
-4. Press F1 to post LI to chat
-5. Press Q to quit programm
-6. ...
-7. Profit?
+2. Choose which button to assign
+3. Choose amount of li
+4. Press "s" and enter to start
+5. Click into Guild Wars 2
+6. Press F1-F9 to post LI to chat
+(7. Press P to pause hotkeys)
+8. ...
+9. Profit?
 
 Notes: 
 1. make sure you choose enough seconds to click inside of gw2
@@ -35,12 +37,11 @@ Notes:
 3. you only need "Gw2ChatCodeBuddy.exe" you can delete "README.md" and "version.txt"
 
 ## Currently working @
-- Use Hotkey to Post Chatcode instead of timed
+- Kill Proofs
 
 ## What Features are planned to be added?
-- copy chatcode to clipboard without spamming
-- add kill proof spam for all bosses w1-w4
-- choose multiple stacks of LI
+- add kill proof codes for all bosses w1-w4
+~ more possible hotkeys
 
 ## Build with
 [![PyInstaller](http://www.pyinstaller.org/_downloads/pyinstaller-draft1a-35x35-trans.png)](http://www.pyinstaller.org/)  [PyInstaller](http://www.pyinstaller.org/) - to create executable
@@ -53,7 +54,11 @@ https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 ## Release notes:
-V2.0 release (23.10.2017)
+V2.1 released (24.10.2017
+- choose to add li to f1-f9
+- exception if offline or blocked by firewall while looking for update
+
+V2.0 released (23.10.2017)
 - removed time based spam
 - added hotkey "F1" to post and "Q" to quit
 
