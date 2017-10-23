@@ -54,8 +54,8 @@ tested on fresh installed win7 & 10
 
 ## Release notes:
 V2.0 release (23.10.2017)
-- added hotkey "F1" to post and "Q" to quit
 - removed time based spam
+- added hotkey "F1" to post and "Q" to quit
 
 V1.2 released (20.10.2017) # I had to take a ~2month break because of studying
 - bug fix
