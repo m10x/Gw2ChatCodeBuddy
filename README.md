@@ -1,7 +1,7 @@
 # Gw2ChatCodeBuddy
-[![Release](https://img.shields.io/badge/release-v1.2-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Release](https://img.shields.io/badge/release-v2.0-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
-[![Size](https://img.shields.io/badge/size-9.5mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Size](https://img.shields.io/badge/size-9.725mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![GW2](https://img.shields.io/badge/gw2-LowkeyFlex.8432-blue.svg)](#)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
@@ -23,12 +23,11 @@ I use PyInstaller to pack the script into an executable. So you only have 1 file
 ## Guide:
 1. Start Gw2ChatCodeBuddy.exe
 2. Choose LI from 1-250
-3. Choose how often to spam from 1-10times
-4. Choose time between each  spam from 0.3-1 second
-5. Choose in how many seconds to start from 1-10 seconds
-6. Click into Guild Wars 2
-7. ...
-8. Profit?
+3. Click into Guild Wars 2
+4. Press F1 to post LI to chat
+5. Press Q to quit programm
+6. ...
+7. Profit?
 
 Notes: 
 1. make sure you choose enough seconds to click inside of gw2
@@ -54,6 +53,10 @@ https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 ## Release notes:
+V2.0 release (23.10.2017)
+- added hotkey "F1" to post and "Q" to quit
+- removed time based spam
+
 V1.2 released (20.10.2017) # I had to take a ~2month break because of studying
 - bug fix
 - small improvement
