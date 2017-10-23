@@ -53,7 +53,7 @@ https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 ## Release notes:
-V2.1 released (24.10.2017
+V2.1 released (24.10.2017)
 - choose to add li to f1-f9
 - exception if offline or blocked by firewall while looking for update
 
