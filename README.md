@@ -26,10 +26,9 @@ I use PyInstaller to pack the script into an executable. So you only have 1 file
 3. Choose amount of li
 4. Press "s" and enter to start
 5. Click into Guild Wars 2
-6. Press F1-F9 to post LI to chat
-(7. Press P to pause hotkeys)
-8. ...
-9. Profit?
+6. Press F1-F9 to post LI to chat / P to pause hotkeys
+7. ...
+8. Profit?
 
 Notes: 
 1. make sure you choose enough seconds to click inside of gw2
