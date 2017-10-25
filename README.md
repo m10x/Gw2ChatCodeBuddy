@@ -22,7 +22,7 @@ I use PyInstaller to pack the script into an executable. So you only have 1 file
 <sup>1</sup>: Kill Proofs are planned to be added soon
 
 ## Guide:
-[YouTube Video on how to use](https://www.youtube.com/watch?v=rGlqyOEN5oM)
+[YouTube Video on how to use :)](https://www.youtube.com/watch?v=rGlqyOEN5oM)
 
 1. Download the latest release from [here](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases) (as .zip)
 2. Extract it with 7zip or WinRar to wherever you want to
