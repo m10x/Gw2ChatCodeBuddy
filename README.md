@@ -20,20 +20,18 @@ I use PyInstaller to pack the script into an executable. So you only have 1 file
 [Download newest release here](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 
 ## Guide:
-[YouTube Video on how to use :)](https://www.youtube.com/watch?v=rGlqyOEN5oM)
+[YouTube Video on how to use :) (old version new video coming soon)](https://www.youtube.com/watch?v=rGlqyOEN5oM)
 
-1. Download the latest release from [here](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases) (as .zip)
-2. Extract it with 7zip or WinRar to wherever you want to
-3. You can delete README.md and version.txt as they are not needed
-5. Start Gw2ChatCodeBuddy.exe
-6. Choose which button to assign
-7. Choose LI or any W1-W4 Boss Kill Proof
-8. Choose amount
-9. Press "s" and enter to start
-10. Click into Guild Wars 2
-11. Press F1-F9 to post LI to chat / P to pause hotkeys
-12. ...
-13. Profit?
+1. Download the latest release from [here](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases) (as .exe)
+2. Start Gw2ChatCodeBuddy.exe
+3. Choose which button to assign
+4. Choose LI or any W1-W4 Boss Kill Proof
+5. Choose amount
+6. Press "s" and enter to start (you can't use the console until you press P to pause the hotkeys)
+7. Click into Guild Wars 2
+8. Press F1-F9 to post LI to chat / P to pause hotkeys 
+9. ...
+10. Profit?
 
 Notes: 
 1. make sure you choose enough seconds to click inside of gw2
