@@ -22,14 +22,17 @@ I use PyInstaller to pack the script into an executable. So you only have 1 file
 <sup>1</sup>: Kill Proofs are planned to be added soon
 
 ## Guide:
-1. Start Gw2ChatCodeBuddy.exe
-2. Choose which button to assign
-3. Choose amount of li
-4. Press "s" and enter to start
-5. Click into Guild Wars 2
-6. Press F1-F9 to post LI to chat / P to pause hotkeys
-7. ...
-8. Profit?
+1. Download the latest release from [here](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases) (as .zip)
+2. Extract it with 7zip or WinRar to wherever you want to
+3. You can delete README.md and version.txt as they are not needed
+5. Start Gw2ChatCodeBuddy.exe
+6. Choose which button to assign
+7. Choose amount of li
+8. Press "s" and enter to start
+9. Click into Guild Wars 2
+10. Press F1-F9 to post LI to chat / P to pause hotkeys
+11. ...
+12. Profit?
 
 Notes: 
 1. make sure you choose enough seconds to click inside of gw2
