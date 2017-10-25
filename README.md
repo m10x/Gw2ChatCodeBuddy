@@ -43,8 +43,8 @@ Notes:
 
 ## What Features are planned to be added
 - different Kill Proofs for each boss
-~ legendary armour codes?
-~ more possible hotkeys
+- ~legendary armour codes
+- ~more possible hotkeys
 
 ## Build with
 [![PyInstaller](http://www.pyinstaller.org/_downloads/pyinstaller-draft1a-35x35-trans.png)](http://www.pyinstaller.org/)  [PyInstaller](http://www.pyinstaller.org/) - to create executable
