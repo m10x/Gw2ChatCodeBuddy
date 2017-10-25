@@ -1,5 +1,5 @@
 # Gw2ChatCodeBuddy
-[![Release](https://img.shields.io/badge/release-v2.1-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Release](https://img.shields.io/badge/release-v3.0-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Size](https://img.shields.io/badge/size-9.734mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![GW2](https://img.shields.io/badge/gw2-LowkeyFlex.8432-blue.svg)](#)
@@ -7,19 +7,17 @@
 
 ## Introduction
 You got (good) Raid Experience but you can't get into a raid group because you don't have enough Legendary Insights? :pensive:  
-You already killed a Raid Boss but you don't have the Kill Proofs<sup>1</sup> anymore? :persevere:  
-You are just lazy and don't want to carry your LIs and KPs<sup>1</sup> around with you and/or are too lazy to spam it? :smirk:
+You already killed a Raid Boss but you don't have the Kill Proofs anymore? :persevere:  
+You are just lazy and don't want to carry your LIs and KPs around with you and/or are too lazy to spam it? :smirk:
 
 Then Gw2ChatCodeBuddy is what you need.
-It calculates the Chat Code for a certain amount of LIs or KPs<sup>1</sup>, copies it to the clipboard and emulates the key strokes "enter" and "left control" + "v" to post it.
-You can assign different amounts of LIs or KPs<sup>1</sup> to the Hotkeys F1-F9.
+It calculates the Chat Code for a certain amount of LIs or KPs, copies it to the clipboard and emulates the key strokes "enter" and "left control" + "v" to post it.
+You can assign different amounts of LIs or KPs to the Hotkeys F1-F9.
 
 I'm currently learning Python and i wanted to do a script which may be useful for some people. :)  
 I use PyInstaller to pack the script into an executable. So you only have 1 file which you can easily use.
 
 [Download newest release here](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
-
-<sup>1</sup>: Kill Proofs are planned to be added soon
 
 ## Guide:
 [YouTube Video on how to use :)](https://www.youtube.com/watch?v=rGlqyOEN5oM)
@@ -29,12 +27,13 @@ I use PyInstaller to pack the script into an executable. So you only have 1 file
 3. You can delete README.md and version.txt as they are not needed
 5. Start Gw2ChatCodeBuddy.exe
 6. Choose which button to assign
-7. Choose amount of li
-8. Press "s" and enter to start
-9. Click into Guild Wars 2
-10. Press F1-F9 to post LI to chat / P to pause hotkeys
-11. ...
-12. Profit?
+7. Choose LI or any W1-W4 Boss Kill Proof
+8. Choose amount
+9. Press "s" and enter to start
+10. Click into Guild Wars 2
+11. Press F1-F9 to post LI to chat / P to pause hotkeys
+12. ...
+13. Profit?
 
 Notes: 
 1. make sure you choose enough seconds to click inside of gw2
@@ -42,10 +41,11 @@ Notes:
 3. you only need "Gw2ChatCodeBuddy.exe" you can delete "README.md" and "version.txt"
 
 ## Currently working @
-- Kill Proofs
+- different Kill Proofs for each boss especially trio
 
-## What Features are planned to be added?
-- add kill proof codes for all bosses w1-w4
+## What Features are planned to be added
+- different Kill Proofs for each boss
+~ legendary armour codes?
 ~ more possible hotkeys
 
 ## Build with
@@ -59,6 +59,11 @@ https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 ## Release notes:
+V3.0 released (26.10.2017)
+- implemented KP Chat Codes for each W1-W4 boss :)
+- added f10+f11 as hotkeys
+- code improvements
+
 V2.1 released (24.10.2017)
 - choose to add li to f1-f9
 - exception if offline or blocked by firewall while looking for update
