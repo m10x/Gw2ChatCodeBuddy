@@ -5,6 +5,8 @@
 [![GW2](https://img.shields.io/badge/gw2-LowkeyFlex.8432-blue.svg)](#)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
+###Currently only for 64bbit Windows, I'm working on a 32bit version atm.
+
 ## Introduction
 You got (good) Raid Experience but you can't get into a raid group because you don't have enough Legendary Insights? :pensive:  
 You already killed a Raid Boss but you don't have the Kill Proofs anymore? :persevere:  
@@ -39,9 +41,11 @@ Notes:
 3. you only need "Gw2ChatCodeBuddy.exe" you can delete "README.md" and "version.txt"
 
 ## Currently working @
+- 32bit version
 - different Kill Proofs for each boss especially trio
 
 ## What Features are planned to be added
+- 32bit version
 - different Kill Proofs for each boss
 - ~legendary armour codes
 - ~more possible hotkeys
