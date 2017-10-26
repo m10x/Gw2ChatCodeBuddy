@@ -5,7 +5,7 @@
 [![GW2](https://img.shields.io/badge/gw2-LowkeyFlex.8432-blue.svg)](#)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
-###Currently only for 64bbit Windows, I'm working on a 32bit version atm.
+###Currently only for 64bit Windows, I'm working on a 32bit version atm.
 
 ## Introduction
 You got (good) Raid Experience but you can't get into a raid group because you don't have enough Legendary Insights? :pensive:  
@@ -22,7 +22,7 @@ I use PyInstaller to pack the script into an executable. So you only have 1 file
 [Download newest release here](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 
 ## Guide:
-[YouTube Video on how to use :) (old version new video coming soon)](https://www.youtube.com/watch?v=rGlqyOEN5oM)
+[YouTube Video on how to use :)](https://www.youtube.com/watch?v=TT-YfTw1A1U)
 
 1. Download the latest release from [here](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases) (as .exe)
 2. Start Gw2ChatCodeBuddy.exe
