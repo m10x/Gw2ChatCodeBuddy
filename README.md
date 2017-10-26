@@ -39,11 +39,9 @@ Notes:
 - make sure you are in the right chat and that your chatbox isn't currently open
 
 ## Currently working @
-- 32bit version
 - different Kill Proofs for each boss especially trio
 
 ## What Features are planned to be added
-- 32bit version
 - different Kill Proofs for each boss
 - ~legendary armour codes
 - ~more possible hotkeys
