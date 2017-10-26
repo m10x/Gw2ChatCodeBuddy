@@ -63,6 +63,7 @@ V3.0 released (26.10.2017)
 - implemented KP Chat Codes for each W1-W4 boss :)
 - added f10+f11 as hotkeys
 - code improvements
+- added 32bit Version
 
 V2.1 released (24.10.2017)
 - choose to add li to f1-f9
