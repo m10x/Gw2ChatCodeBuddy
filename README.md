@@ -36,9 +36,7 @@ I use PyInstaller to pack the script into an executable. So you only have 1 file
 10. Profit?
 
 Notes: 
-1. make sure you choose enough seconds to click inside of gw2
-2. make sure you are in the right chat but that your chatbox isn't currently open
-3. you only need "Gw2ChatCodeBuddy.exe" you can delete "README.md" and "version.txt"
+- make sure you are in the right chat but that your chatbox isn't currently open
 
 ## Currently working @
 - 32bit version
