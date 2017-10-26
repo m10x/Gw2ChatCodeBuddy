@@ -5,7 +5,7 @@
 [![GW2](https://img.shields.io/badge/gw2-LowkeyFlex.8432-blue.svg)](#)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
-###Currently only for 64bit Windows, a 32bit version will be uploaded in a few hours probably
+### 32bit version now available, only use it if you have 32bit windows
 
 ## Introduction
 You got (good) Raid Experience but you can't get into a raid group because you don't have enough Legendary Insights? :pensive:  
