@@ -36,7 +36,7 @@ I use PyInstaller to pack the script into an executable. So you only have 1 file
 10. Profit?
 
 Notes: 
-- make sure you are in the right chat but that your chatbox isn't currently open
+- make sure you are in the right chat and that your chatbox isn't currently open
 
 ## Currently working @
 - 32bit version
