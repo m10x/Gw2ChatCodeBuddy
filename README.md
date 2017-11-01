@@ -1,7 +1,7 @@
 # Gw2 Chat Code Buddy
-[![Release](https://img.shields.io/badge/release-v3.0-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Release](https://img.shields.io/badge/release-v3.1-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
-[![Size](https://img.shields.io/badge/size-9.5mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Size](https://img.shields.io/badge/size-10mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![GW2](https://img.shields.io/badge/gw2-LowkeyFlex.8432-blue.svg)](#)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
@@ -57,6 +57,11 @@ https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 ## Release notes:
+V3.1 released (01.11.2017)
+Thanks to [Friteusenfett](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/issues/1) for the Feedback :)
+- changed escort kill proof
+- fixed typo
+
 V3.0 released (26.10.2017)
 - implemented KP Chat Codes for each W1-W4 boss :)
 - added f10+f11 as hotkeys
