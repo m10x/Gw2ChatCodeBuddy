@@ -31,7 +31,7 @@ I use PyInstaller to pack the script into an executable. So you only have 1 file
 5. Choose amount
 6. Press "s" and enter to start (you can't use the console until you press P to pause the hotkeys)
 7. Click into Guild Wars 2
-8. Press F1-F9 to post LI to chat / P to pause hotkeys 
+8. Press F1-F11 to post the assigned chat code into the chat / P to pause hotkeys 
 9. ...
 10. Profit?
 
