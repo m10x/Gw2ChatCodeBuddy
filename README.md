@@ -39,7 +39,7 @@ Notes:
 - make sure you are in the right chat and that your chatbox isn't currently open
 
 ## Currently working @
-- different Kill Proofs for each boss especially trio
+- Save Settings
 
 ## What Features are planned to be added
 - different Kill Proofs for each boss
