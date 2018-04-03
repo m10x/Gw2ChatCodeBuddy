@@ -57,6 +57,10 @@ https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 ## Release notes:
+V3.5 released (03.04.2018)
+- added W5 Kill Proofs :)
+
+
 V3.1 released (01.11.2017)
 Thanks to [Friteusenfett](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/issues/1) for the Feedback :)
 - changed escort kill proof
