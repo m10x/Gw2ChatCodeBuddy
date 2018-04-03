@@ -27,7 +27,7 @@ I use PyInstaller to pack the script into an executable. So you only have 1 file
 1. Download the latest release from [here](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases) (as .exe)
 2. Start Gw2ChatCodeBuddy.exe
 3. Choose which button to assign
-4. Choose LI or any W1-W4 Boss Kill Proof
+4. Choose LI or any W1-W5 Boss Kill Proof
 5. Choose amount
 6. Press "s" and enter to start (you can't use the console until you press P to pause the hotkeys)
 7. Click into Guild Wars 2
