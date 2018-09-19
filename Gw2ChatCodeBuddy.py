@@ -11,7 +11,7 @@ from decimal import Decimal
 from key_define import PressKey, ReleaseKey
 
 ### VERSION ###
-version = "3.7"
+version = "3.8"
 shell = win32com.client.Dispatch("WScript.Shell")
 os.system('mode con: cols=93 lines=40')
 
@@ -49,24 +49,25 @@ def logo ():
     print ("  \___|_||_\__,_|\__|\___\___/\__,_\___|___/\_,_\__,_\__,_|\_, |")
     print ("                                                           |__/ ")
 logo()
-print ("Checking for updates...")
+
 
 #check for update
-try:
-    response = requests.get('https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/blob/master/version.txt')
-    info = response.text
-    buddy = "buddyversion: "
-    def substring_after(s, buddy):
-        return s.partition(buddy)[2]
-    cutinfo = substring_after(info, buddy)
-    cutinfo2 = cutinfo[:3]
-
-    if (Decimal(version) < Decimal(cutinfo2)):
-        version = "\nA newer version is available at: https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases/tag/"+cutinfo2+"\n"
-    else:
-        version = ("\nVersion "+version+". You are up-to-date. :)\n")
-except:
-    version = "Couldn't check for updates :/... Please check your firewall / internet connection and restart :)"
+# print ("Checking for updates...")
+# try:
+#     response = requests.get('https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/blob/master/version.txt')
+#     info = response.text
+#     buddy = "buddyversion: "
+#     def substring_after(s, buddy):
+#         return s.partition(buddy)[2]
+#     cutinfo = substring_after(info, buddy)
+#     cutinfo2 = cutinfo[:3]
+#
+#     if (Decimal(version) < Decimal(cutinfo2)):
+#         version = "\nA newer version is available at: https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases/tag/"+cutinfo2+"\n"
+#     else:
+#         version = ("\nVersion "+version+". You are up-to-date. :)\n")
+# except:
+#     version = "Couldn't check for updates :/... Please check your firewall / internet connection and restart :)"
 
 listCodes = ["Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned"]
 listCodesShow = ["Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned"]
@@ -169,14 +170,40 @@ def liorkp (button):
     inputUser = 10
     while 0 > inputUser or 6 < inputUser:
         try:
-            inputUser = int(input("What do you want to add? LI(0), W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), Fractals(6)\n"))
+            inputUser = int(input("What do you want to add? LI/LD(0), Fractals(1), W1 KP(2), W2 KP(3), W3 KP(4), W4 KP(5), W5 KP(6), W6 KP(7)\n"))
         except:
             print ("Invalid Input")
         if inputUser == 0:
-            assign_button(button, "LI", "02f62d0100")
+            inputUser = 10
+            while 0 > inputUser or 2 < inputUser:
+                try:
+                    inputUser = int(input("Legendary Insight (1), Legendary Divination (2), Return (0)\n"))
+                except:
+                    print ("Invalid Input")
+                if inputUser == 0:
+                    inputUser = 10
+                    break
+                elif inputUser == 1:
+                    assign_button(button, "Legendary Insight", "02f62d0100")
+                elif inputUser == 2:
+                    assign_button(button, "Legendary Divination", "02a5590100")
+
+        ### Fractals KPs ###
+        elif inputUser == 1:
+            inputUser = 10
+            while 0 > inputUser or 1 < inputUser:
+                try:
+                    inputUser = int(input("100 CM (1), Return (0)\n"))
+                except:
+                    print ("Invalid Input")
+                if inputUser == 0:
+                    inputUser = 10
+                    break
+                elif inputUser == 1:
+                    assign_button(button, "100 CM KP", "024f3f0100")
 
         ### W1 KPs ###
-        elif inputUser == 1:
+        elif inputUser == 2:
             inputUser = 10
             while 0 > inputUser or 3 < inputUser:
                 try:
@@ -194,7 +221,7 @@ def liorkp (button):
                     assign_button(button, "Sabetha KP", "02a02f0100")
 
         ### W2 KPs ###
-        elif inputUser == 2:
+        elif inputUser == 3:
             inputUser = 10
             while 0 > inputUser or 3 < inputUser:
                 try:
@@ -215,7 +242,7 @@ def liorkp (button):
                     assign_button(button, "Matthias KP", "026f2f0100")
 
         ### W3 KPs ###
-        elif inputUser == 3:
+        elif inputUser == 4:
             inputUser = 10
             while 0 > inputUser or 3 < inputUser:
                 try:
@@ -233,7 +260,7 @@ def liorkp (button):
                     assign_button(button, "Xera KP", "025e340100")
 
         ### W4 KPs ###
-        elif inputUser == 4:
+        elif inputUser == 5:
             inputUser = 10
             while 0 > inputUser or 4 < inputUser:
                 try:
@@ -253,7 +280,7 @@ def liorkp (button):
                     assign_button(button, "Deimos KP", "029e3a0100")
         
         ### W5 KPs ###
-        elif inputUser == 5:
+        elif inputUser == 6:
             inputUser = 10
             while 0 > inputUser or 4 < inputUser:
                 try:
@@ -272,19 +299,7 @@ def liorkp (button):
                 elif inputUser == 4:
                     assign_button(button, "Voice in the Void KP", "02814e0100")
 
-        ### Fractals KPs ###
-        elif inputUser == 6:
-            inputUser = 10
-            while 0 > inputUser or 1 < inputUser:
-                try:
-                    inputUser = int(input("100 CM (1), Return (0)\n"))
-                except:
-                    print ("Invalid Input")
-                if inputUser == 0:
-                    inputUser = 10
-                    break
-                elif inputUser == 1:
-                    assign_button(button, "100 CM KP", "024f3f0100")
+
 
 
 # P will stop message loop
