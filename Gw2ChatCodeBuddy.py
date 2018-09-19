@@ -298,7 +298,24 @@ def liorkp (button):
                     assign_button(button, "Statues of Grenth KP", "02284f0100")
                 elif inputUser == 4:
                     assign_button(button, "Voice in the Void KP", "02814e0100")
-
+                    
+        ### W6 KPs ###
+        elif inputUser == 7:
+            inputUser = 10
+            while 0 > inputUser or 3 < inputUser:
+                try:
+                    inputUser = int(input("Conjured Amalgamate (1), Lagos (2), Qadim (3), Return (0)\n"))
+                except:
+                    print ("Invalid Input")
+                if inputUser == 0:
+                    inputUser = 10
+                    break
+                elif inputUser == 1:
+                    assign_button(button, "Conjured Amalgamate KP", "02df590100")
+                elif inputUser == 2:
+                    assign_button(button, "Lagos KP", "021c5b0100")
+                elif inputUser == 3:
+                    assign_button(button, "Qadim KP", "02455a0100")
 
 
 
