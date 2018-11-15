@@ -1,1 +1,1 @@
-buddyversion: 3.7
+buddyversion: 3.8
