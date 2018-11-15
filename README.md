@@ -46,7 +46,7 @@ Notes:
 - ~more possible hotkeys
 
 ## Build with
-[![PyInstaller](http://www.pyinstaller.org/_downloads/pyinstaller-draft1a-35x35-trans.png)](http://www.pyinstaller.org/)  [PyInstaller](http://www.pyinstaller.org/) - to create executable
+[![PyInstaller](http://www.pyinstaller.org/_downloads/c2ec9d3ec62efa36a94f459a8e1454f7/pyinstaller-draft1a-35x35-trans.png)](http://www.pyinstaller.org/)  [PyInstaller](http://www.pyinstaller.org/) - to create executable
 
 [globalhotkeys.py](https://gist.github.com/m10x/a9a2eb296fab2106a5ae7c16b8874a4b) i forged it from [mdavey](https://gist.github.com/mdavey/6d40a89dbc15aefcc8cd) and improved it (works now also great with python 3.6) ;)
 
