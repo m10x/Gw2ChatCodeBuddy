@@ -11,7 +11,7 @@ from decimal import Decimal
 from key_define import PressKey, ReleaseKey
 
 ### VERSION ###
-version = "3.7"
+version = "4.0"
 shell = win32com.client.Dispatch("WScript.Shell")
 os.system('mode con: cols=93 lines=40')
 
@@ -281,9 +281,9 @@ def liorkp (button):
                 elif inputUser == 1:
                     assign_button(button, "Conjured Amalgamate KP", "02df590100") #[&AgHfWQEA]
                 elif inputUser == 2:
-                    assign_button(button, "Twin Largoss KP", "02ee590100") #[&AgEcWwEA]
+                    assign_button(button, "Twin Largos KP", "02ee590100") #[&AgEcWwEA]
                 elif inputUser == 3:
-                    assign_button(button, "Qadim's KP", "02455a0100") #[&AgFFWgEA]
+                    assign_button(button, "Qadim KP", "02455a0100") #[&AgFFWgEA]
 		
 		### Fractals KPs ###
         elif inputUser == 7:
