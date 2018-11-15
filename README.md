@@ -1,8 +1,7 @@
 # Gw2 Chat Code Buddy
-[![Release](https://img.shields.io/badge/release-v3.7-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Release](https://img.shields.io/badge/release-v4.0-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
-[![Size](https://img.shields.io/badge/size-11mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
-[![GW2](https://img.shields.io/badge/gw2-LowkeyFlex.8432-blue.svg)](#)
+[![Size](https://img.shields.io/badge/size-9.35mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
 ### 32bit version now available, only use it if you have 32bit windows
@@ -57,6 +56,11 @@ https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 ## Release notes:
+V4.0 released (15.11.2018)
+Thanks to [Keldorb](https://github.com/Keldorb) and [ArisenDrake](https://github.com/ArisenDrake) for their Pull requests!
+- added W6 Kill Proofs
+- added Legendary Divinations
+
 V3.7 released (05.04.2018)
 - added missing W5 KP
 - added Fractal 100 CM KP
