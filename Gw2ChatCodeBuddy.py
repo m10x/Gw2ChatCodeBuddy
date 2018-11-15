@@ -169,11 +169,26 @@ def liorkp (button):
     inputUser = 10
     while 0 > inputUser or 7 < inputUser:
         try:
-            inputUser = int(input("What do you want to add? LI(0), W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), W6 KP(6), Fractals(7)\n"))
+            inputUser = int(input("What do you want to add? LI/LD(0), W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), W6 KP(6), Fractals(7)\n"))
         except:
             print ("Invalid Input")
+	
+	### LI or LD ###
         if inputUser == 0:
-            assign_button(button, "LI", "02f62d0100")
+            inputUser = 10
+            while 0 > inputUser or 2 < inputUser:
+                try:
+                    inputUser = int(input("Legendary Insight (1), Legendary Divination (2), Return (0)\n"))
+                except:
+                    print ("Invalid Input")
+                if inputUser == 0:
+                    inputUser = 10
+                    break
+                elif inputUser == 1:
+                    assign_button(button, "Legendary Insight", "02f62d0100")
+                elif inputUser == 2:
+                    assign_button(button, "Legendary Divination", "02a5590100")
+
 
         ### W1 KPs ###
         elif inputUser == 1:
