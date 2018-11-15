@@ -11,7 +11,8 @@ from decimal import Decimal
 from key_define import PressKey, ReleaseKey
 
 ### VERSION ###
-version = "3.8"
+version = "4.0"
+
 shell = win32com.client.Dispatch("WScript.Shell")
 os.system('mode con: cols=93 lines=40')
 
@@ -168,11 +169,14 @@ def spam():
 
 def liorkp (button):
     inputUser = 10
-    while 0 > inputUser or 6 < inputUser:
+    while 0 > inputUser or 7 < inputUser:
         try:
-            inputUser = int(input("What do you want to add? LI/LD(0), Fractals(1), W1 KP(2), W2 KP(3), W3 KP(4), W4 KP(5), W5 KP(6), W6 KP(7)\n"))
+
+            inputUser = int(input("What do you want to add? LI/LD(0), W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), W6 KP(6), Fractals(7)\n"))
         except:
             print ("Invalid Input")
+	
+	### LI or LD ###
         if inputUser == 0:
             inputUser = 10
             while 0 > inputUser or 2 < inputUser:
@@ -225,7 +229,7 @@ def liorkp (button):
             inputUser = 10
             while 0 > inputUser or 3 < inputUser:
                 try:
-                    inputUser = int(input("Slothasor (1), Bandit Trio (2), Matthias (3), Return (0)\n"))
+                    inputUser = int(input("Slothasor (1), Matthias (2), Return (0)\n"))
                 except:
                     print ("Invalid Input")
                 if inputUser == 0:
@@ -234,11 +238,6 @@ def liorkp (button):
                 elif inputUser == 1:
                     assign_button(button, "Slothasor KP", "028a2f0100")
                 elif inputUser == 2:
-                    #assign_button(button, "Bandit Trio KP", "")
-                    print ("Not implemented yet cause there is no trophy for Bandit Trio, sry :/")
-                    inputUser = 10
-                    break
-                elif inputUser == 3:
                     assign_button(button, "Matthias KP", "026f2f0100")
 
         ### W3 KPs ###
@@ -282,7 +281,7 @@ def liorkp (button):
         ### W5 KPs ###
         elif inputUser == 6:
             inputUser = 10
-            while 0 > inputUser or 4 < inputUser:
+            while 0 > inputUser or 5 < inputUser:
                 try:
                     inputUser = int(input("Soulless Horror (1), River of Souls (2), Statues of Grenth (3), Voice in the Void (4), Return (0)\n"))
                 except:
@@ -298,11 +297,13 @@ def liorkp (button):
                     assign_button(button, "Statues of Grenth KP", "02284f0100")
                 elif inputUser == 4:
                     assign_button(button, "Voice in the Void KP", "02814e0100")
+
                     
         ### W6 KPs ###
         elif inputUser == 7:
             inputUser = 10
             while 0 > inputUser or 3 < inputUser:
+
                 try:
                     inputUser = int(input("Conjured Amalgamate (1), Lagos (2), Qadim (3), Return (0)\n"))
                 except:
