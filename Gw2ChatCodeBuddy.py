@@ -167,9 +167,9 @@ def spam():
 
 def liorkp (button):
     inputUser = 10
-    while 0 > inputUser or 6 < inputUser:
+    while 0 > inputUser or 7 < inputUser:
         try:
-            inputUser = int(input("What do you want to add? LI(0), W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), Fractals(6)\n"))
+            inputUser = int(input("What do you want to add? LI(0), W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), W6 KP(6), Fractals(7)\n"))
         except:
             print ("Invalid Input")
         if inputUser == 0:
@@ -198,7 +198,7 @@ def liorkp (button):
             inputUser = 10
             while 0 > inputUser or 3 < inputUser:
                 try:
-                    inputUser = int(input("Slothasor (1), Bandit Trio (2), Matthias (3), Return (0)\n"))
+                    inputUser = int(input("Slothasor (1), Matthias (2), Return (0)\n"))
                 except:
                     print ("Invalid Input")
                 if inputUser == 0:
@@ -207,11 +207,6 @@ def liorkp (button):
                 elif inputUser == 1:
                     assign_button(button, "Slothasor KP", "028a2f0100")
                 elif inputUser == 2:
-                    #assign_button(button, "Bandit Trio KP", "")
-                    print ("Not implemented yet cause there is no trophy for Bandit Trio, sry :/")
-                    inputUser = 10
-                    break
-                elif inputUser == 3:
                     assign_button(button, "Matthias KP", "026f2f0100")
 
         ### W3 KPs ###
@@ -255,7 +250,7 @@ def liorkp (button):
         ### W5 KPs ###
         elif inputUser == 5:
             inputUser = 10
-            while 0 > inputUser or 4 < inputUser:
+            while 0 > inputUser or 5 < inputUser:
                 try:
                     inputUser = int(input("Soulless Horror (1), River of Souls (2), Statues of Grenth (3), Voice in the Void (4), Return (0)\n"))
                 except:
@@ -271,11 +266,29 @@ def liorkp (button):
                     assign_button(button, "Statues of Grenth KP", "02284f0100")
                 elif inputUser == 4:
                     assign_button(button, "Voice in the Void KP", "02814e0100")
-
-        ### Fractals KPs ###
+        
+		### Fractals KPs ###
         elif inputUser == 6:
             inputUser = 10
-            while 0 > inputUser or 1 < inputUser:
+            while 0 > inputUser or 6 < inputUser:
+                try:
+                    inputUser = int(input("Conjured Amalgamate (1), Twin Largos (2), Qadim (3), Return (0)\n"))
+                except:
+                    print ("Invalid Input")
+                if inputUser == 0:
+                    inputUser = 10
+                    break
+                elif inputUser == 1:
+                    assign_button(button, "Conjured Amalgamate KP", "02df590100") #[&AgHfWQEA]
+                elif inputUser == 2:
+                    assign_button(button, "Twin Largoss KP", "02ee590100") #[&AgEcWwEA]
+                elif inputUser == 3:
+                    assign_button(button, "Qadim's KP", "02455a0100") #[&AgFFWgEA]
+		
+		### Fractals KPs ###
+        elif inputUser == 7:
+            inputUser = 10
+            while 0 > inputUser or 7 < inputUser:
                 try:
                     inputUser = int(input("100 CM (1), Return (0)\n"))
                 except:
