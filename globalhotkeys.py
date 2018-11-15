@@ -74,7 +74,7 @@ class GlobalHotKeys(object):
     def _include_numeric_vks(cls):
         for key_code in (range(ord('0'), ord('9') + 1)):
             setattr(cls, 'VK_' + chr(key_code), key_code)
-
+ 
  
 GlobalHotKeys._include_defined_vks()
 GlobalHotKeys._include_alpha_vks()
