@@ -1,6 +1,6 @@
 ##############
 #This code is taken from: http://stackoverflow.com/questions/14489013/simulate-python-keypresses-for-controlling-a-game
-############## 
+##############
 import ctypes
 
 SendInput = ctypes.windll.user32.SendInput
