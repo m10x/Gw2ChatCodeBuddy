@@ -9,11 +9,11 @@
 ## Introduction
 You got (good) Raid Experience but you can't get into a raid group because you don't have enough Legendary Insights? :pensive:  
 You already killed a Raid Boss but you don't have the Kill Proofs anymore? :persevere:  
-You are just lazy and don't want to carry your LIs and KPs around with you and/or are too lazy to spam it? :smirk:
+You are just lazy and don't want to carry your LIs/LDs and KPs around with you and/or are too lazy to spam it? :smirk:
 
 Then Gw2ChatCodeBuddy is what you need.
-It calculates the Chat Code for a certain amount of LIs or KPs, copies it to the clipboard and emulates the key strokes "enter" and "left control" + "v" to post it.
-You can assign different amounts of LIs or KPs to the Hotkeys F1-F11.
+It calculates the Chat Code for a certain amount of LIs/LDs or KPs, copies it to the clipboard and emulates the key strokes "enter" and "left control" + "v" to post it.
+You can assign different amounts of LIs/LDs or KPs to the Hotkeys F1-F11.
 
 I'm currently learning Python and i wanted to do a script which may be useful for some people. :)  
 I use PyInstaller to pack the script into an executable. So you only have 1 file which you can easily use.
