@@ -296,7 +296,7 @@ def liorkp (button):
                 elif inputUser == 1:
                     assign_button(button, "Conjured Amalgamate KP", "02df590100") #[&AgHfWQEA]
                 elif inputUser == 2:
-                    assign_button(button, "Twin Largos KP", "02ee590100") #[&AgEcWwEA]
+                    assign_button(button, "Twin Largos KP", "02455a0100") #[&AgEcWwEA]
                 elif inputUser == 3:
                     assign_button(button, "Qadim KP", "02455a0100") #[&AgFFWgEA]
 		
