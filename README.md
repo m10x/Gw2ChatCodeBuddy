@@ -4,8 +4,6 @@
 [![Size](https://img.shields.io/badge/size-9.01mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
-### 32bit version now available, only use it if you have 32bit windows
-
 ## Introduction
 You got (good) Raid Experience but you can't get into a raid group because you don't have enough Legendary Insights? :pensive:  
 You already killed a Raid Boss but you don't have the Kill Proofs anymore? :persevere:  
