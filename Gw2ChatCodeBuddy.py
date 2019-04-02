@@ -11,7 +11,7 @@ from decimal import Decimal
 from key_define import PressKey, ReleaseKey
 
 ### VERSION ###
-version = "4.0"
+version = "4.1"
 shell = win32com.client.Dispatch("WScript.Shell")
 os.system('mode con: cols=93 lines=40')
 
@@ -282,7 +282,7 @@ def liorkp (button):
                 elif inputUser == 4:
                     assign_button(button, "Voice in the Void KP", "02814e0100")
         
-		### Fractals KPs ###
+		### W6 KPs ###
         elif inputUser == 6:
             inputUser = 10
             while 0 > inputUser or 6 < inputUser:
@@ -296,11 +296,27 @@ def liorkp (button):
                 elif inputUser == 1:
                     assign_button(button, "Conjured Amalgamate KP", "02df590100") #[&AgHfWQEA]
                 elif inputUser == 2:
-                    assign_button(button, "Twin Largos KP", "02455a0100") #[&AgEcWwEA]
+                    inputUser = 10
+                    while 0 > inputUser or 4 < inputUser:
+                        try:
+                            inputUser = int(input("Token (1), Bronze Trophy (2), Silver Trophy (3), Gold Trophy (4), Return (0)\n"))
+                        except:
+                            print ("Invalid Input")
+                        if inputUser == 0:
+                            inputUser = 10
+                            break
+                        elif inputUser == 1:
+                            assign_button(button, "Twin Largos Token", "021c5b0100")
+                        elif inputUser == 2:
+                            assign_button(button, "Bronze Twin Largos Trophy", "023c5a0100")
+                        elif inputUser == 3:
+                            assign_button(button, "Silver Twin Largos Trophy", "02105a0100")
+                        elif inputUser == 4:
+                            assign_button(button, "Gold Twin Largos Trophy", "02ee590100")									
                 elif inputUser == 3:
                     assign_button(button, "Qadim KP", "02455a0100") #[&AgFFWgEA]
 		
-		### Fractals KPs ###
+        ### Fractals KPs ###
         elif inputUser == 7:
             inputUser = 10
             while 0 > inputUser or 7 < inputUser:
