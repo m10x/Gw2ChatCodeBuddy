@@ -68,9 +68,8 @@ try:
 except:
     version = "Couldn't check for updates :/... Please check your firewall / internet connection and restart :)"
 
-listCodes = ["Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned"]
-listCodesShow = ["Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned", "Not assigned"]
-
+listCodes = ["Not assigned"] * 11
+listCodesShow = ["Not assigned"] * 11
 def button_assignmend():
     print ("F1: "+listCodesShow[0]+"\nF2: "+listCodesShow[1]+"\nF3: "+listCodesShow[2]+"\nF4: "+listCodesShow[3]+"\nF5: "+listCodesShow[4]+"\nF6: "+listCodesShow[5]+"\nF7: "+listCodesShow[6]+"\nF8: "+listCodesShow[7]+"\nF9: "+listCodesShow[8]+"\nF10: "+listCodesShow[9]+"\nF11: "+listCodesShow[10]+"\nP: Pause Hotkeys and reactivate Console") 
 
