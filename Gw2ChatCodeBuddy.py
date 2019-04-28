@@ -53,7 +53,7 @@ print ("Checking for updates...")
 
 #check for update
 try:
-    response = requests.get('https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/blob/master/version.txt')
+    response = requests.get('https://github.com/m10x/Gw2ChatCodeBuddy/blob/master/version.txt')
     info = response.text
     buddy = "buddyversion: "
     def substring_after(s, buddy):
@@ -62,7 +62,7 @@ try:
     cutinfo2 = cutinfo[:3]
 
     if (Decimal(version) < Decimal(cutinfo2)):
-        version = "\nA newer version is available at: https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases/tag/"+cutinfo2+"\n"
+        version = "\nA newer version is available at: https://github.com/m10x/Gw2ChatCodeBuddy/releases/tag/"+cutinfo2+"\n"
     else:
         version = ("\nVersion "+version+". You are up-to-date. :)\n")
 except:
