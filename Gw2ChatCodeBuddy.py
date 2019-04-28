@@ -335,7 +335,7 @@ while quitpls == 0:
     while start == 0:
         _=os.system('cls')
         logo()
-        print (version)
+        print (versionCheck)
         button_assignmend()
         print ("Write 1-11 to assign a chatcode to F1-F11, Write 's' to start, 'q' to quit\n")
 
