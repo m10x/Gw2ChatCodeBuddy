@@ -54,19 +54,15 @@ print ("Checking for updates...")
 #check for update
 try:
     response = requests.get('https://github.com/m10x/Gw2ChatCodeBuddy/blob/master/version.txt')
-    info = response.text
-    buddy = "buddyversion: "
-    def substring_after(s, buddy):
-        return s.partition(buddy)[2]
-    cutinfo = substring_after(info, buddy)
-    cutinfo2 = cutinfo[:3]
+    index = response.text.index("buddyversion")
+    versionNewest = response.text[index+14:index+17]
 
-    if (Decimal(version) < Decimal(cutinfo2)):
-        version = "\nA newer version is available at: https://github.com/m10x/Gw2ChatCodeBuddy/releases/tag/"+cutinfo2+"\n"
+    if (Decimal(version) < Decimal(versionNewest)):
+        versionCheck = "\nA newer version is available at: https://github.com/m10x/Gw2ChatCodeBuddy/releases/tag/"+versionNewest+"\n"
     else:
-        version = ("\nVersion "+version+". You are up-to-date. :)\n")
+        versionCheck = ("\nVersion "+version+". You are up-to-date. :)\n")
 except:
-    version = "Couldn't check for updates :/... Please check your firewall / internet connection and restart :)"
+    versionCheck = "Couldn't check for updates :/... Please check your firewall / internet connection and restart :)"
 
 listCodes = ["Not assigned"] * 11
 listCodesShow = ["Not assigned"] * 11
