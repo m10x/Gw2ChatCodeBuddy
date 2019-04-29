@@ -1,3 +1,5 @@
+# add admin check / notification
+
 import pyperclip
 import time
 import win32com.client
