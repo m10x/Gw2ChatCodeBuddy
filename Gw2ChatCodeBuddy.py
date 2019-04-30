@@ -1,5 +1,3 @@
-# add admin check / notification
-
 import pyperclip
 import time
 import win32com.client
@@ -7,6 +5,7 @@ import codecs
 import requests
 import os
 import base64
+# import ctypes for admin check
 
 from globalhotkeys import GlobalHotKeys
 from decimal import Decimal
@@ -17,6 +16,10 @@ version = "4.5"
 shell = win32com.client.Dispatch("WScript.Shell")
 os.system('mode con: cols=93 lines=40')
 
+listButtons = ["F1", "F2", "F3", "F4", "F5", "F6",
+               "F7", "F8", "F9", "F10", "F11"]
+listCodes = ["Not assigned"] * 11
+listCodesShow = ["Not assigned"] * 11
 
 def hit_enter():
     PressKey(0x1c)
@@ -65,10 +68,8 @@ try:
 except:
     versionCheck = "Couldn't check for updates :/... Please check your firewall / internet connection and restart :)"
 
-listButtons = ["F1", "F2", "F3", "F4", "F5", "F6",
-               "F7", "F8", "F9", "F10", "F11"]
-listCodes = ["Not assigned"] * 11
-listCodesShow = ["Not assigned"] * 11
+# if not ctypes.windll.shell32.IsUserAnAdmin():
+#    print("Not running as admin... Some features may not work properly!")
 
 def button_assignmend():
     print("F1: " + listCodesShow[0] + "\nF2: " + listCodesShow[1] + "\nF3: "
@@ -102,7 +103,7 @@ def load_from_file():
         f.close()
     for line in lines:
         config = line.split(";")
-        assign_button(config[0], config[2][:-1], config[1], True)
+        assign_button(config[0], config[2][:-1], config[1].strip(), True)
     print("Successfully loaded config from .\gw2chatcodebuddy.config")
     button_assignmend()
 
