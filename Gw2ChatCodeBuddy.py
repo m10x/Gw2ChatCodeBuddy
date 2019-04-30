@@ -339,22 +339,22 @@ def liorkp(button):
                 elif inputUser == 1:
                     assign_button(button, "Conjured Amalgamate KP", "[&AgHfWQEA]")
                 elif inputUser == 2:
-                    inputUser = 10
-                    while 0 > inputUser or 4 < inputUser:
+                    inputUser2 = 10
+                    while 0 > inputUser2 or 4 < inputUser2:
                         try:
-                            inputUser = int(input("Token (1), Bronze Trophy (2), Silver Trophy (3), Gold Trophy (4), Return (0)\n"))
+                            inputUser2 = int(input("Token (1), Bronze Trophy (2), Silver Trophy (3), Gold Trophy (4), Return (0)\n"))
                         except:
                             print("Invalid Input")
-                        if inputUser == 0:
-                            inputUser = 10
+                        if inputUser2 == 0:
+                            inputUser2 = 10
                             break
-                        elif inputUser == 1:
+                        elif inputUser2 == 1:
                             assign_button(button, "Twin Largos Token", "[&AgEcWwEA]")
-                        elif inputUser == 2:
+                        elif inputUser2 == 2:
                             assign_button(button, "Bronze Twin Largos Trophy", "[&AgE8WgEA]")
-                        elif inputUser == 3:
+                        elif inputUser2 == 3:
                             assign_button(button, "Silver Twin Largos Trophy", "[&AgEQWgEA]")
-                        elif inputUser == 4:
+                        elif inputUser2 == 4:
                             assign_button(button, "Gold Twin Largos Trophy", "[&AgHuWQEA]")
                 elif inputUser == 3:
                     assign_button(button, "Qadim KP", "[&AgFFWgEA]")
