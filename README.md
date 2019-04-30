@@ -1,7 +1,7 @@
 # Gw2 Chat Code Buddy
 [![Release](https://img.shields.io/badge/release-v4.5-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
-[![Size](https://img.shields.io/badge/size-9.00mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Size](https://img.shields.io/badge/size-9.01mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
 ## Introduction
@@ -24,19 +24,23 @@ I use PyInstaller to pack the script into an executable. So you only have 1 file
 1. Download the latest release from [here](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases) (as .exe)
 2. Start Gw2ChatCodeBuddy.exe
 3. Choose which button to assign
-4. Choose LI/LD ,any W1-W6 Boss Kill Proof or Fractal 100cm Kill Proof
+4. Choose LI/LD, any W1-W6 Boss Kill Proof,Fractal 100cm Kill Proof or paste Codes from the wiki
 5. Choose amount
-6. Press "s" and enter to start (you can't use the console until you press P to pause the hotkeys)
+6. Press "g" and enter to start (you can't use the console until you press P to pause the hotkeys)
 7. Click into Guild Wars 2
 8. Press F1-F11 to post the assigned chat code into the chat / P to pause hotkeys 
 9. ...
 10. Profit?
 
+You can now save your assignemds to a .config file by writing s and load them by writing g.
+By doing that, you can skip the steips 3. to 5. the next time you use it :)
+
 Notes: 
 - make sure you are in the right chat and that your chatbox isn't currently open
+- if it doesn't work, try it again as admin (even if it shouldn't be neccessary under normal circumstances
 
 ## Currently working @
-- Save Settings
+? Tell me any suggestions
 
 ## What Features are planned to be added
 - different Kill Proofs for each boss
@@ -54,6 +58,12 @@ https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 ## Release notes:
+V4.5 released (30.04.2019)
+- massive code improvements
+- bug fixes (largos kp)
+- New Feature: save / load your button assignmends to/from a .config file
+- New Feature: past chatcodes (custom (8)) from the wiki
+
 V4.1 released (02.04.2019)
 Thanks to gespriella for pointing out
 - Added different Twin Largos KPs
