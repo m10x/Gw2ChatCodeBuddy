@@ -12,7 +12,7 @@ from decimal import Decimal
 from key_define import PressKey, ReleaseKey
 
 # VERSION
-version = "4.5"
+version = "4.6"
 shell = win32com.client.Dispatch("WScript.Shell")
 os.system('mode con: cols=93 lines=40')
 
@@ -20,17 +20,55 @@ listButtons = ["F1", "F2", "F3", "F4", "F5", "F6",
                "F7", "F8", "F9", "F10", "F11"]
 listCodes = ["Not assigned"] * 11
 listCodesShow = ["Not assigned"] * 11
+timeOut = 0.05
+
 
 def hit_enter():
     PressKey(0x1c)
     ReleaseKey(0x1c)
+    # time.sleep(timeOut) Falls immer noch blinken sollte
+
 
 def paste():
     PressKey(0x1D)
     PressKey(0x2F)
-    time.sleep(0.05)
+    time.sleep(timeOut)
     ReleaseKey(0x1D)
     ReleaseKey(0x2F)
+
+
+def configure_time():
+    global timeOut
+    _ = os.system('cls')
+    logo()
+    print("Some users may experience this issue.")
+    print("To resolve this start this program as admin and/or increase the latency of the key presses")
+    print("The standard latency is 0.05. Even minimal changes like 0.06 can solve this problem!")
+    print("Your current latency is {}".format(timeOut))
+
+    try:
+        inputUser = input("Write any float or Return(0)\n")
+    except:
+        print("Invalid Input")
+        _ = input("Press Enter to continue")
+
+    if inputUser == "0":
+        return
+    if is_float(inputUser):
+        timeOut = float(inputUser)
+        _ = input("The Latency has changed to {}. Press Enter to continue".format(timeOut))
+    else:
+        print("Invalid Input")
+        _ = input("Press Enter to continue")
+
+
+def is_float(value):
+    try:
+        float(value)
+        return True
+    except:
+        return False
+
 
 def logo():
     print("                  -::/://:::+sdss+:/so////+osssssssso+")
@@ -52,24 +90,7 @@ def logo():
     print(" | (__| ' \/ _` |  _| (__/ _ \/ _` / -_) _ \ || / _` / _` | || |")
     print("  \___|_||_\__,_|\__|\___\___/\__,_\___|___/\_,_\__,_\__,_|\_, |")
     print("                                                           |__/ ")
-logo()
-print("Checking for updates...")
 
-# check for update
-try:
-    response = requests.get('https://github.com/m10x/Gw2ChatCodeBuddy/blob/master/version.txt')
-    index = response.text.index("buddyversion")
-    versionNewest = response.text[index+14:index+17]
-
-    if (Decimal(version) < Decimal(versionNewest)):
-        versionCheck = "\nA newer version is available at: https://github.com/m10x/Gw2ChatCodeBuddy/releases/tag/"+versionNewest+"\n"
-    else:
-        versionCheck = ("\nVersion "+version+". You are up-to-date. :)\n")
-except:
-    versionCheck = "Couldn't check for updates :/... Please check your firewall / internet connection and restart :)"
-
-# if not ctypes.windll.shell32.IsUserAnAdmin():
-#    print("Not running as admin... Some features may not work properly!")
 
 def button_assignmend():
     print("F1: " + listCodesShow[0] + "\nF2: " + listCodesShow[1] + "\nF3: "
@@ -78,6 +99,7 @@ def button_assignmend():
           + listCodesShow[6] + "\nF8: " + listCodesShow[7] + "\nF9: "
           + listCodesShow[8] + "\nF10: " + listCodesShow[9] + "\nF11: "
           + listCodesShow[10] + "\nP: Pause Hotkeys and reactivate Console")
+
 
 def save_to_file():
     print("Saving config to .\gw2chatcodebuddy.config")
@@ -92,6 +114,8 @@ def save_to_file():
         print("Failed to write to .\gw2chatcodebuddy.config")
     finally:
         f.close()
+        _ = input("Press Enter to continue")
+
 
 def load_from_file():
     try:
@@ -105,7 +129,7 @@ def load_from_file():
         config = line.split(";")
         assign_button(config[0], config[2][:-1], config[1].strip(), True)
     print("Successfully loaded config from .\gw2chatcodebuddy.config")
-    button_assignmend()
+    _ = input("Press Enter to continue")
 
 
 def assign_button(button, itemname, itemcode, loading=False):
@@ -116,6 +140,7 @@ def assign_button(button, itemname, itemcode, loading=False):
                 anzahl = int(input("How much of "+itemname+" (1-250)?\n"))
             except:
                 print("Invalid Input")
+                _ = input("Press Enter to continue")
         listCodes[(button - 1)] = str(calculate(anzahl, itemcode))
         listCodesShow[(button - 1)] = str(anzahl) + " " + itemname
     else:
@@ -208,6 +233,7 @@ def spam():
     paste()
     hit_enter()
 
+
 def liorkp(button):
     inputUser = 10
     while 0 > inputUser or 8 < inputUser:
@@ -215,6 +241,7 @@ def liorkp(button):
             inputUser = int(input("What do you want to add? LI/LD(0), W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), W6 KP(6)\nFractals(7), Custom(8)\n"))
         except:
             print("Invalid Input")
+            _ = input("Press Enter to continue")
 
         # LI or LD
         if inputUser == 0:
@@ -224,6 +251,7 @@ def liorkp(button):
                     inputUser = int(input("Legendary Insight (1), Legendary Divination (2), Return (0)\n"))
                 except:
                     print("Invalid Input")
+                    _ = input("Press Enter to continue")
                 if inputUser == 0:
                     inputUser = 10
                     break
@@ -241,6 +269,7 @@ def liorkp(button):
                     inputUser = int(input("Vale Guardian (1), Gorseval (2), Sabetha (3), Return (0)\n"))
                 except:
                     print("Invalid Input")
+                    _ = input("Press Enter to continue")
                 if inputUser == 0:
                     inputUser = 10
                     break
@@ -259,6 +288,7 @@ def liorkp(button):
                     inputUser = int(input("Slothasor (1), Matthias (2), Return (0)\n"))
                 except:
                     print("Invalid Input")
+                    _ = input("Press Enter to continue")
                 if inputUser == 0:
                     inputUser = 10
                     break
@@ -275,6 +305,7 @@ def liorkp(button):
                     inputUser = int(input("Escort (1), Keep Construct (2), Xera (3), Return (0)\n"))
                 except:
                     print("Invalid Input")
+                    _ = input("Press Enter to continue")
                 if inputUser == 0:
                     inputUser = 10
                     break
@@ -293,6 +324,7 @@ def liorkp(button):
                     inputUser = int(input("Cairn (1), Mursaat Overseer (2), Samarog (3), Deimos (4), Return (0)\n"))
                 except:
                     print("Invalid Input")
+                    _ = input("Press Enter to continue")
                 if inputUser == 0:
                     inputUser = 10
                     break
@@ -313,6 +345,7 @@ def liorkp(button):
                     inputUser = int(input("Soulless Horror (1), River of Souls (2), Statues of Grenth (3), Voice in the Void (4), Return (0)\n"))
                 except:
                     print("Invalid Input")
+                    _ = input("Press Enter to continue")
                 if inputUser == 0:
                     inputUser = 10
                     break
@@ -333,6 +366,7 @@ def liorkp(button):
                     inputUser = int(input("Conjured Amalgamate (1), Twin Largos (2), Qadim (3), Return (0)\n"))
                 except:
                     print("Invalid Input")
+                    _ = input("Press Enter to continue")
                 if inputUser == 0:
                     inputUser = 10
                     break
@@ -345,6 +379,7 @@ def liorkp(button):
                             inputUser2 = int(input("Token (1), Bronze Trophy (2), Silver Trophy (3), Gold Trophy (4), Return (0)\n"))
                         except:
                             print("Invalid Input")
+                            _ = input("Press Enter to continue")
                         if inputUser2 == 0:
                             inputUser2 = 10
                             break
@@ -367,6 +402,7 @@ def liorkp(button):
                     inputUser = int(input("100 CM (1), Return (0)\n"))
                 except:
                     print("Invalid Input")
+                    _ = input("Press Enter to continue")
                 if inputUser == 0:
                     inputUser = 10
                     break
@@ -379,6 +415,7 @@ def liorkp(button):
                 inputChatcode = input("Paste a Chatcode or Return (0)\n")
             except:
                 print("Invalid Input")
+                _ = input("Press Enter to continue")
             if inputChatcode != "0":
                 inputChatcodeName = input("Give it a name or Return (0)\n")
                 if inputChatcodeName != "0":
@@ -388,58 +425,85 @@ def liorkp(button):
             else:
                 inputUser = 10
 
-# P will stop message loop
-GlobalHotKeys.register(GlobalHotKeys.VK_P, 0, False)
 
-quitpls = 0
-start = 0
-while quitpls == 0:
-    while start == 0:
-        _ = os.system('cls')
-        logo()
-        print(versionCheck)
-        button_assignmend()
-        print("Write 1-11 to assign a chatcode to F1-F11, 'g' to start, 's' to save, 'l' to load\n")
-        print("'q' to quit\n")
+def main():
+    logo()
+    print("Checking for updates...")
 
-        inputUser = input()
-        if inputUser == "s":
-            save_to_file()
-        if inputUser == "l":
-            load_from_file()
-        if inputUser == "g":
-            start = 1
-        elif inputUser == "q":
-            start = 1
-            quitpls = 1
-        elif inputUser == "1":
-            liorkp(1)
-        elif inputUser == "2":
-            liorkp(2)
-        elif inputUser == "3":
-            liorkp(3)
-        elif inputUser == "4":
-            liorkp(4)
-        elif inputUser == "5":
-            liorkp(5)
-        elif inputUser == "6":
-            liorkp(6)
-        elif inputUser == "7":
-            liorkp(7)
-        elif inputUser == "8":
-            liorkp(8)
-        elif inputUser == "9":
-            liorkp(9)
-        elif inputUser == "10":
-            liorkp(10)
-        elif inputUser == "11":
-            liorkp(11)
-        """ F12 NOT working???
-        elif inputUser == "12":
-            liorkp(12)
-        """
-        # start main loop
-        if quitpls == 0 and start == 1:
-            start = 0
-            GlobalHotKeys.listen()
-    start = 1
+    # check for update
+    try:
+        response = requests.get('https://github.com/m10x/Gw2ChatCodeBuddy/blob/master/version.txt')
+        index = response.text.index("buddyversion")
+        versionNewest = response.text[index+14:index+17]
+
+        if (Decimal(version) < Decimal(versionNewest)):
+            versionCheck = "\nA newer version is available at: https://github.com/m10x/Gw2ChatCodeBuddy/releases/tag/"+versionNewest+"\n"
+        else:
+            versionCheck = ("\nVersion "+version+". You are up-to-date. :)\n")
+    except:
+        versionCheck = "Couldn't check for updates :/... Please check your firewall / internet connection and restart :)"
+
+    # if not ctypes.windll.shell32.IsUserAnAdmin():
+    #    print("Not running as admin... Some features may not work properly!")
+
+    # P will stop message loop
+    GlobalHotKeys.register(GlobalHotKeys.VK_P, 0, False)
+
+    quitpls = 0
+    start = 0
+    while quitpls == 0:
+        while start == 0:
+            _ = os.system('cls')
+            logo()
+            print(versionCheck)
+            button_assignmend()
+            print("\nWrite 1-11 to assign a chatcode to F1-F11, 'g' to start, 's' to save, 'l' to load")
+            print("'q' to quit, when the chatbox only sort of 'blinks' press 'b'\n")
+
+            inputUser = input()
+            if inputUser == "s":
+                save_to_file()
+            elif inputUser == "l":
+                load_from_file()
+            elif inputUser == "g":
+                start = 1
+            elif inputUser == "q":
+                start = 1
+                quitpls = 1
+            elif inputUser == "b":
+                configure_time()
+            elif inputUser == "1":
+                liorkp(1)
+            elif inputUser == "2":
+                liorkp(2)
+            elif inputUser == "3":
+                liorkp(3)
+            elif inputUser == "4":
+                liorkp(4)
+            elif inputUser == "5":
+                liorkp(5)
+            elif inputUser == "6":
+                liorkp(6)
+            elif inputUser == "7":
+                liorkp(7)
+            elif inputUser == "8":
+                liorkp(8)
+            elif inputUser == "9":
+                liorkp(9)
+            elif inputUser == "10":
+                liorkp(10)
+            elif inputUser == "11":
+                liorkp(11)
+            """ F12 NOT working???
+            elif inputUser == "12":
+                liorkp(12)
+            """
+            # start main loop
+            if quitpls == 0 and start == 1:
+                start = 0
+                GlobalHotKeys.listen()
+        start = 1
+
+
+if __name__ == '__main__':
+    main()
