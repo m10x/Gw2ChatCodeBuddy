@@ -7,7 +7,7 @@ import os
 import base64
 
 # import ctypes for admin check
-# TODO: CUSTOM
+# TODO: Check if custom keys work especially saving loading, check latency ingame
 
 from globalhotkeys import GlobalHotKeys
 from decimal import Decimal
@@ -199,10 +199,9 @@ def customHotkey():
     print("Some Keys might won't work, e.g. when they are already assigned as hotkey from another program\n")
     key = input().strip().upper()
     vkkey = "VK_{}".format(key)
-    try:
-        _ = GlobalHotKeys.key_mapping.index(vkkey)
-    except ValueError:
-        _ = input("Invalid input ({}). Press 'Enter' to continue.".format(keys))
+    if GlobalHotKeys.__dict__.get(vkkey) is None:
+        _ = input("Invalid input ({}). Press 'Enter' to continue.".format(vkkey))
+        return
     liorkp(vkkey)
     """
     if len(key) == 1:
