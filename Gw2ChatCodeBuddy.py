@@ -5,7 +5,9 @@ import codecs
 import requests
 import os
 import base64
+
 # import ctypes for admin check
+# TODO: CUSTOM
 
 from globalhotkeys import GlobalHotKeys
 from decimal import Decimal
@@ -16,10 +18,9 @@ version = "4.6"
 shell = win32com.client.Dispatch("WScript.Shell")
 os.system('mode con: cols=93 lines=40')
 
-listButtons = ["F1", "F2", "F3", "F4", "F5", "F6",
-               "F7", "F8", "F9", "F10", "F11"]
-listCodes = ["Not assigned"] * 11
-listCodesShow = ["Not assigned"] * 11
+listButtons = []
+listCodes = []
+listCodesShow = []
 timeOut = 0.05
 
 
@@ -93,12 +94,9 @@ def logo():
 
 
 def button_assignmend():
-    print("F1: " + listCodesShow[0] + "\nF2: " + listCodesShow[1] + "\nF3: "
-          + listCodesShow[2] + "\nF4: " + listCodesShow[3] + "\nF5: "
-          + listCodesShow[4] + "\nF6: " + listCodesShow[5] + "\nF7: "
-          + listCodesShow[6] + "\nF8: " + listCodesShow[7] + "\nF9: "
-          + listCodesShow[8] + "\nF10: " + listCodesShow[9] + "\nF11: "
-          + listCodesShow[10] + "\nP: Pause Hotkeys and reactivate Console")
+    for i in range(len(listButtons)):
+        print("{}: {}".format(listButtons[i], listCodesShow[i]))
+    print("\nP: Pause Hotkeys and reactivate Console")
 
 
 def save_to_file():
@@ -132,6 +130,14 @@ def load_from_file():
     _ = input("Press Enter to continue")
 
 
+def check_in_list(_list, _data):
+    try:
+        _index = _list.index(_data)
+        return _index
+    except ValueError:
+        return -1
+
+
 def assign_button(button, itemname, itemcode, loading=False):
     if (not loading):
         anzahl = 0
@@ -141,74 +147,26 @@ def assign_button(button, itemname, itemcode, loading=False):
             except:
                 print("Invalid Input")
                 _ = input("Press Enter to continue")
-        listCodes[(button - 1)] = str(calculate(anzahl, itemcode))
-        listCodesShow[(button - 1)] = str(anzahl) + " " + itemname
-    else:
-        index = listButtons.index(button)
-        listCodes[index] = itemcode
-        listCodesShow[index] = itemname
-    if button == 1 or button == "F1":
-        @GlobalHotKeys.register(GlobalHotKeys.VK_F1)
-        def f1():
-            pyperclip.copy(listCodes[0])
-            spam()
-    elif button == 2 or button == "F2":
-        @GlobalHotKeys.register(GlobalHotKeys.VK_F2)
-        def f2():
-            pyperclip.copy(listCodes[1])
-            spam()
-    elif button == 3 or button == "F3":
-        @GlobalHotKeys.register(GlobalHotKeys.VK_F3)
-        def f3():
-            pyperclip.copy(listCodes[2])
-            spam()
-    elif button == 4 or button == "F4":
-        @GlobalHotKeys.register(GlobalHotKeys.VK_F4)
-        def f4():
-            pyperclip.copy(listCodes[3])
-            spam()
-    elif button == 5 or button == "F5":
-        @GlobalHotKeys.register(GlobalHotKeys.VK_F5)
-        def f5():
-            pyperclip.copy(listCodes[4])
-            spam()
-    elif button == 6 or button == "F6":
-        @GlobalHotKeys.register(GlobalHotKeys.VK_F6)
-        def f6():
-            pyperclip.copy(listCodes[5])
-            spam()
-    elif button == 7 or button == "F7":
-        @GlobalHotKeys.register(GlobalHotKeys.VK_F7)
-        def f7():
-            pyperclip.copy(listCodes[6])
-            spam()
-    elif button == 8 or button == "F8":
-        @GlobalHotKeys.register(GlobalHotKeys.VK_F8)
-        def f8():
-            pyperclip.copy(listCodes[7])
-            spam()
-    elif button == 9 or button == "F9":
-        @GlobalHotKeys.register(GlobalHotKeys.VK_F9)
-        def f9():
-            pyperclip.copy(listCodes[8])
-            spam()
-    elif button == 10 or button == "F10":
-        @GlobalHotKeys.register(GlobalHotKeys.VK_F10)
-        def f10():
-            pyperclip.copy(listCodes[9])
-            spam()
-    elif button == 11 or button == "F11":
-        @GlobalHotKeys.register(GlobalHotKeys.VK_F11)
-        def f11():
-            pyperclip.copy(listCodes[10])
-            spam()
-    """ F12 NOT WORKING???
-    elif button == 12 or button == "F12":
-        @GlobalHotKeys.register(GlobalHotKeys.VK_F12)
-        def f12():
-            pyperclip.copy(listCodes[11])
-            spam()
-    """
+        listIndex = check_in_list(listButtons, button)
+        if (listIndex == -1):
+            listButtons.append(button)
+            listCodes.append(str(calculate(anzahl, itemcode)))
+            listCodesShow.append(str(anzahl) + " " + itemname)
+    else:  # laden von config
+        listButtons.clear()
+        listCodes.clear()
+        listCodesShow.clear()
+
+        listButtons.append(button)
+        listCodes.append(itemcode)
+        listCodesShow.append(itemname)
+    listIndex = check_in_list(listButtons, button)
+    keyValue = GlobalHotKeys.__dict__.get(button)
+
+    @GlobalHotKeys.register(keyValue)
+    def f1():
+        pyperclip.copy(listCodes[listIndex])
+        spam()
 
 
 def calculate(amount, itemcode):
@@ -232,6 +190,26 @@ def spam():
     hit_enter()
     paste()
     hit_enter()
+
+
+def customHotkey():
+    print("F1-11 can't satisfy you? Choose other Keys as Hotkeys:")
+    print("0 - 9, A - Z (no P), NUMPAD0 - NUMPAD9, F1-F12")
+    print("MULTIPLY, ADD, SEPERATOR, SUBSTRACT, DECIMAL, DIVIDE")
+    print("Some Keys might won't work, e.g. when they are already assigned as hotkey from another program\n")
+    key = input().strip().upper()
+    vkkey = "VK_{}".format(key)
+    try:
+        _ = GlobalHotKeys.key_mapping.index(vkkey)
+    except ValueError:
+        _ = input("Invalid input ({}). Press 'Enter' to continue.".format(keys))
+    liorkp(vkkey)
+    """
+    if len(key) == 1:
+        if re.match(r"[A-Z]|[a-z]|[0-9]", key):
+            liorkp("VK_{}".format(key.upper()))
+    else
+    """
 
 
 def liorkp(button):
@@ -259,7 +237,6 @@ def liorkp(button):
                     assign_button(button, "Legendary Insight", "[&AgH2LQEA]")
                 elif inputUser == 2:
                     assign_button(button, "Legendary Divination", "[&AgGlWQEA]")
-
 
         # W1 KPs
         elif inputUser == 1:
@@ -457,7 +434,7 @@ def main():
             logo()
             print(versionCheck)
             button_assignmend()
-            print("\nWrite 1-11 to assign a chatcode to F1-F11, 'g' to start, 's' to save, 'l' to load")
+            print("\nWrite 1-11 to assign a chatcode to F1-F11, 'c' for other keys,'g' to start, 's' to save, 'l' to load")
             print("'q' to quit, when the chatbox only sort of 'blinks' press 'b'\n")
 
             inputUser = input()
@@ -472,28 +449,30 @@ def main():
                 quitpls = 1
             elif inputUser == "b":
                 configure_time()
+            elif inputUser == "c":
+                customHotkey()
             elif inputUser == "1":
-                liorkp(1)
+                liorkp("VK_F1")
             elif inputUser == "2":
-                liorkp(2)
+                liorkp("VK_F2")
             elif inputUser == "3":
-                liorkp(3)
+                liorkp("VK_F3")
             elif inputUser == "4":
-                liorkp(4)
+                liorkp("VK_F4")
             elif inputUser == "5":
-                liorkp(5)
+                liorkp("VK_F5")
             elif inputUser == "6":
-                liorkp(6)
+                liorkp("VK_F6")
             elif inputUser == "7":
-                liorkp(7)
+                liorkp("VK_F7")
             elif inputUser == "8":
-                liorkp(8)
+                liorkp("VK_F8")
             elif inputUser == "9":
-                liorkp(9)
+                liorkp("VK_F9")
             elif inputUser == "10":
-                liorkp(10)
+                liorkp("VK_F10")
             elif inputUser == "11":
-                liorkp(11)
+                liorkp("VK_F11")
             """ F12 NOT working???
             elif inputUser == "12":
                 liorkp(12)
