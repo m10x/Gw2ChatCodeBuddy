@@ -1,27 +1,26 @@
 import pyperclip
 import time
-import win32com.client
 import codecs
 import requests
-import os
 import base64
 
-# import ctypes for admin check
-# TODO: Check if custom keys work especially saving loading, check latency ingame
+# check latency ingame
 
+from os import system
 from globalhotkeys import GlobalHotKeys
 from decimal import Decimal
 from key_define import PressKey, ReleaseKey
+from natsort import index_natsorted
 
 # VERSION
 version = "4.6"
-shell = win32com.client.Dispatch("WScript.Shell")
-os.system('mode con: cols=93 lines=40')
+system('mode con: cols=93 lines=40')
 
 listButtons = []
 listCodes = []
 listCodesShow = []
 timeOut = 0.05
+versionCheck = ""
 
 
 def hit_enter():
@@ -40,7 +39,7 @@ def paste():
 
 def configure_time():
     global timeOut
-    _ = os.system('cls')
+    _ = system('cls')
     logo()
     print("Some users may experience this issue.")
     print("To resolve this start this program as admin and/or increase the latency of the key presses")
@@ -66,6 +65,14 @@ def configure_time():
 def is_float(value):
     try:
         float(value)
+        return True
+    except:
+        return False
+
+
+def is_int(value):
+    try:
+        int(value)
         return True
     except:
         return False
@@ -121,8 +128,12 @@ def load_from_file():
         lines = f.readlines()
     except:
         print("Couldn't open .\gw2chatcodebuddy.config")
+        return
     finally:
         f.close()
+    listButtons.clear()
+    listCodes.clear()
+    listCodesShow.clear()
     for line in lines:
         config = line.split(";")
         assign_button(config[0], config[2][:-1], config[1].strip(), True)
@@ -139,6 +150,9 @@ def check_in_list(_list, _data):
 
 
 def assign_button(button, itemname, itemcode, loading=False):
+
+    global listButtons, listCodes, listCodesShow
+
     if (not loading):
         anzahl = 0
         while 1 > anzahl or 250 < anzahl:
@@ -147,19 +161,27 @@ def assign_button(button, itemname, itemcode, loading=False):
             except:
                 print("Invalid Input")
                 _ = input("Press Enter to continue")
-        listIndex = check_in_list(listButtons, button)
+        listIndex = check_in_list(listButtons, button)  # check if button is already assigned
         if (listIndex == -1):
             listButtons.append(button)
             listCodes.append(str(calculate(anzahl, itemcode)))
             listCodesShow.append(str(anzahl) + " " + itemname)
+        else:
+            listCodes[listIndex] = str(calculate(anzahl, itemcode))
+            listCodesShow[listIndex] = str(anzahl) + " " + itemname
     else:  # laden von config
-        listButtons.clear()
-        listCodes.clear()
-        listCodesShow.clear()
-
         listButtons.append(button)
         listCodes.append(itemcode)
         listCodesShow.append(itemname)
+
+    # sort lists simultaneously
+    # listButtons, listCodes, listCodesShow = map(list, zip(*sorted(zip(listButtons, listCodes, listCodesShow), reverse=False)))
+
+    sortIndex = index_natsorted(listButtons)
+    listButtons = [listButtons[i] for i in sortIndex]
+    listCodes = [listCodes[i] for i in sortIndex]
+    listCodesShow = [listCodesShow[i] for i in sortIndex]
+
     listIndex = check_in_list(listButtons, button)
     keyValue = GlobalHotKeys.__dict__.get(button)
 
@@ -186,7 +208,6 @@ def calculate(amount, itemcode):
 
 
 def spam():
-    shell.AppActivate("Guild Wars 2")  # Gw2Focus
     hit_enter()
     paste()
     hit_enter()
@@ -203,12 +224,6 @@ def customHotkey():
         _ = input("Invalid input ({}). Press 'Enter' to continue.".format(vkkey))
         return
     liorkp(vkkey)
-    """
-    if len(key) == 1:
-        if re.match(r"[A-Z]|[a-z]|[0-9]", key):
-            liorkp("VK_{}".format(key.upper()))
-    else
-    """
 
 
 def liorkp(button):
@@ -402,15 +417,11 @@ def liorkp(button):
                 inputUser = 10
 
 
-def main():
-    logo()
-    print("Checking for updates...")
-
-    # check for update
+def check_for_update():
+    global versionCheck
     try:
-        response = requests.get('https://github.com/m10x/Gw2ChatCodeBuddy/blob/master/version.txt')
-        index = response.text.index("buddyversion")
-        versionNewest = response.text[index+14:index+17]
+        response = requests.get('https://raw.githubusercontent.com/m10x/Gw2ChatCodeBuddy/master/version.txt')
+        versionNewest = response.text[14:17]
 
         if (Decimal(version) < Decimal(versionNewest)):
             versionCheck = "\nA newer version is available at: https://github.com/m10x/Gw2ChatCodeBuddy/releases/tag/"+versionNewest+"\n"
@@ -419,17 +430,23 @@ def main():
     except:
         versionCheck = "Couldn't check for updates :/... Please check your firewall / internet connection and restart :)"
 
-    # if not ctypes.windll.shell32.IsUserAnAdmin():
-    #    print("Not running as admin... Some features may not work properly!")
+
+def main():
+    logo()
+    print("Checking for updates...")
+
+    # check for update
+    check_for_update()
 
     # P will stop message loop
     GlobalHotKeys.register(GlobalHotKeys.VK_P, 0, False)
 
+    global versionCheck
     quitpls = 0
     start = 0
     while quitpls == 0:
         while start == 0:
-            _ = os.system('cls')
+            _ = system('cls')
             logo()
             print(versionCheck)
             button_assignmend()
@@ -450,32 +467,9 @@ def main():
                 configure_time()
             elif inputUser == "c":
                 customHotkey()
-            elif inputUser == "1":
-                liorkp("VK_F1")
-            elif inputUser == "2":
-                liorkp("VK_F2")
-            elif inputUser == "3":
-                liorkp("VK_F3")
-            elif inputUser == "4":
-                liorkp("VK_F4")
-            elif inputUser == "5":
-                liorkp("VK_F5")
-            elif inputUser == "6":
-                liorkp("VK_F6")
-            elif inputUser == "7":
-                liorkp("VK_F7")
-            elif inputUser == "8":
-                liorkp("VK_F8")
-            elif inputUser == "9":
-                liorkp("VK_F9")
-            elif inputUser == "10":
-                liorkp("VK_F10")
-            elif inputUser == "11":
-                liorkp("VK_F11")
-            """ F12 NOT working???
-            elif inputUser == "12":
-                liorkp(12)
-            """
+            elif is_int(inputUser) and int(inputUser) > 0 and int(inputUser) < 12:  # F12 not working
+                liorkp("VK_F{}".format(inputUser))
+
             # start main loop
             if quitpls == 0 and start == 1:
                 start = 0
