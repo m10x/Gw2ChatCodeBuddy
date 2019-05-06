@@ -1,19 +1,18 @@
-import pyperclip
-import time
-import codecs
-import requests
-import base64
-
-# check latency ingame
+# TODO check latency ingame
 
 from os import system
+from base64 import b64decode
+from time import sleep
+from requests import get
+from pyperclip import copy
+from codecs import encode, decode
 from globalhotkeys import GlobalHotKeys
 from decimal import Decimal
 from key_define import PressKey, ReleaseKey
 from natsort import index_natsorted
 
 # VERSION
-version = "4.6"
+version = "5.0"
 system('mode con: cols=93 lines=40')
 
 listButtons = []
@@ -32,7 +31,7 @@ def hit_enter():
 def paste():
     PressKey(0x1D)
     PressKey(0x2F)
-    time.sleep(timeOut)
+    sleep(timeOut)
     ReleaseKey(0x1D)
     ReleaseKey(0x2F)
 
@@ -187,20 +186,20 @@ def assign_button(button, itemname, itemcode, loading=False):
 
     @GlobalHotKeys.register(keyValue)
     def f1():
-        pyperclip.copy(listCodes[listIndex])
+        copy(listCodes[listIndex])  # pyperclip
         spam()
 
 
 def calculate(amount, itemcode):
     # calculate chat code
     # itemcode from base64 to hex
-    hex_itemcode = base64.b64decode(itemcode).hex()
+    hex_itemcode = b64decode(itemcode).hex()
     # amount to hex
     hex_amount = '{0:02x}'.format(int(amount))
     # calculate item + amount
     hexa = hex_itemcode[:2] + hex_amount + hex_itemcode[4:]
     # encode to base64
-    b64 = codecs.encode(codecs.decode(hexa, 'hex'), 'base64').decode()
+    b64 = encode(decode(hexa, 'hex'), 'base64').decode()  # encode(decode()) from codecs and .decode() from strings
     # Next 2 lines to remove \n from b64
     strb64 = str(b64)
     strb64 = strb64[:-1]
@@ -420,7 +419,7 @@ def liorkp(button):
 def check_for_update():
     global versionCheck
     try:
-        response = requests.get('https://raw.githubusercontent.com/m10x/Gw2ChatCodeBuddy/master/version.txt')
+        response = get('https://raw.githubusercontent.com/m10x/Gw2ChatCodeBuddy/master/version.txt')
         versionNewest = response.text[14:17]
 
         if (Decimal(version) < Decimal(versionNewest)):
