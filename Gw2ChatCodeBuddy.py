@@ -101,7 +101,7 @@ def logo():
 
 def button_assignmend():
     for i in range(len(listButtons)):
-        print("{}: {}".format(listButtons[i], listCodesShow[i]))
+        print("{}: {}".format(listButtons[i][3:], listCodesShow[i]))
     print("\nP: Pause Hotkeys and reactivate Console")
 
 
@@ -184,7 +184,7 @@ def assign_button(button, itemname, itemcode, loading=False):
     listIndex = check_in_list(listButtons, button)
     keyValue = GlobalHotKeys.__dict__.get(button)
 
-    @GlobalHotKeys.register(keyValue)
+    @GlobalHotKeys.register(keyValue, button)
     def f1():
         copy(listCodes[listIndex])  # pyperclip
         spam()
@@ -229,7 +229,7 @@ def liorkp(button):
     inputUser = 10
     while 0 > inputUser or 8 < inputUser:
         try:
-            inputUser = int(input("What do you want to add? LI/LD(0), W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), W6 KP(6)\nFractals(7), Custom(8)\n"))
+            inputUser = int(input("What do you want to add? LI/LD(0), W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), W6 KP(6)\nFractals(7), Custom(8), Remove(9)\n"))
         except:
             print("Invalid Input")
             _ = input("Press Enter to continue")
@@ -415,6 +415,20 @@ def liorkp(button):
             else:
                 inputUser = 10
 
+        # Remove Button
+        elif inputUser == 9:
+            global listButtons, listCodes, listCodesShow
+            if listButtons.count(button) == 1:
+                index = listButtons.index(button)
+                del listButtons[index]
+                del listCodes[index]
+                del listCodesShow[index]
+
+                GlobalHotKeys.unregister(GlobalHotKeys.__dict__.get(button))
+            else:
+                input("{} hasn't been assigned yet! Press Enter to continue...".format(button[3]))
+            return
+
 
 def check_for_update():
     global versionCheck
@@ -438,7 +452,7 @@ def main():
     check_for_update()
 
     # P will stop message loop
-    GlobalHotKeys.register(GlobalHotKeys.VK_P, 0, False)
+    GlobalHotKeys.register(GlobalHotKeys.VK_P, "VK_P", 0, False)
 
     global versionCheck
     quitpls = 0
