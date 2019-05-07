@@ -1,19 +1,20 @@
 ''' Todo list:
-    Save clipboard before starting hotkeys and restore after stopping
     Check Latency ingame
     Possibility to remap p?
+    use jaraco instead of pyperclip? cause of images etc...
 '''
 
 from os import system
 from base64 import b64decode
 from time import sleep
 from requests import get
-from pyperclip import copy
-from codecs import encode, decode
+from pyperclip import copy as pyper_copy, paste as pyper_paste
+from codecs import encode as codecs_encode, decode as codecs_decode
 from globalhotkeys import GlobalHotKeys
 from decimal import Decimal
 from key_define import PressKey, ReleaseKey
 from natsort import index_natsorted
+
 
 # VERSION
 version = "5.0"
@@ -24,6 +25,7 @@ listCodes = []
 listStrings = []
 timeOut = 0.05
 versionCheck = ""
+clipboard_tmp = ""
 
 
 def hit_enter():
@@ -190,7 +192,7 @@ def assign_button(button, itemname, itemcode, loading=False):
 
     @GlobalHotKeys.register(keyValue, button)
     def f1():
-        copy(listCodes[listIndex])  # pyperclip
+        pyper_copy(listCodes[listIndex])  # pyperclip, save to clipboard
         spam()
 
 
@@ -203,7 +205,7 @@ def calculate(amount, itemcode):
     # calculate item + amount
     hexa = hex_itemcode[:2] + hex_amount + hex_itemcode[4:]
     # encode to base64
-    b64 = encode(decode(hexa, 'hex'), 'base64').decode()  # encode(decode()) from codecs and .decode() from strings
+    b64 = codecs_encode(codecs_decode(hexa, 'hex'), 'base64').decode()
     # Next 2 lines to remove \n from b64
     strb64 = str(b64)
     strb64 = strb64[:-1]
@@ -495,7 +497,9 @@ def main():
             # start main loop
             if quitpls == 0 and start == 1:
                 start = 0
+                clipboard_tmp = pyper_paste()  # save temporarly current clipboard
                 GlobalHotKeys.listen()
+                pyper_copy(clipboard_tmp)  # restore clipboard after spamming
         start = 1
 
 
