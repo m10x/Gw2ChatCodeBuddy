@@ -60,10 +60,11 @@ tested on fresh installed win7 & 10
 V5.0 released soon
 - custom hotkeys! Choose now between 57 possible hotkeys!
 - chat "blinking" fix option (only few users had this problem)
+- reduced size by 30% (by adjusting import statements)
 - option to remove a hotkey assignmend
 - temporarly save clipboard before activating hotkeys and restoring it afterwards
 - more return options
-- many bug fixes and code improvements
+- many bug fixes, code improvements and text changes
 
 V4.5 released (30.04.2019)
 - massive code improvements
