@@ -45,7 +45,6 @@ Notes:
 ## What Features are planned to be added
 - different Kill Proofs for each boss
 - ~legendary armour codes
-- ~more possible hotkeys
 
 ## Build with
 [![PyInstaller](http://www.pyinstaller.org/_downloads/c2ec9d3ec62efa36a94f459a8e1454f7/pyinstaller-draft1a-35x35-trans.png)](http://www.pyinstaller.org/)  [PyInstaller](http://www.pyinstaller.org/) - to create executable
@@ -58,6 +57,14 @@ https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 ## Release notes:
+V5.0 released soon
+- custom hotkeys! Choose now between 57 possible hotkeys!
+- chat "blinking" fix option (only few users had this problem)
+- option to remove a hotkey assignmend
+- temporarly save clipboard before activating hotkeys and restoring it afterwards
+- more return options
+- many bug fixes and code improvements
+
 V4.5 released (30.04.2019)
 - massive code improvements
 - bug fixes (largos kp)
