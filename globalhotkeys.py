@@ -1,12 +1,13 @@
-import ctypes
-import ctypes.wintypes
+from ctypes import byref as ctypes_byref
+from ctypes.windll import user32 as windll_user32
+from ctypes.wintypes import MSG as wintypes_MSG
 import win32con
 
 
 class GlobalHotKeys(object):
 
     key_mapping = []
-    user32 = ctypes.windll.user32
+    user32 = windll_user32
     MOD_ALT = win32con.MOD_ALT
     MOD_CTRL = win32con.MOD_CONTROL
     MOD_CONTROL = win32con.MOD_CONTROL
@@ -47,22 +48,22 @@ class GlobalHotKeys(object):
         for index, (vk, keyname, modifiers, func) in enumerate(cls.key_mapping):
             if not cls.user32.RegisterHotKey(None, index, modifiers, vk):
                 # raise Exception('Unable to register hot key: ' + str(vk))
-                _ = input("Can't assign {} as hotkey. Press Enter to continue...".format(keyname[3:]))
+                input("Can't assign {} as hotkey. Press Enter to continue...".format(keyname[3:]))
                 for index, (vk, keyname, modifiers, func) in enumerate(cls.key_mapping):
                     cls.user32.UnregisterHotKey(None, index)
                 return
 
         try:
-            msg = ctypes.wintypes.MSG()
-            while cls.user32.GetMessageA(ctypes.byref(msg), None, 0, 0) != 0:
+            msg = wintypes_MSG()
+            while cls.user32.GetMessageA(ctypes_byref(msg), None, 0, 0) != 0:
                 if msg.message == win32con.WM_HOTKEY:
                     (vk, keyname, modifiers, func) = cls.key_mapping[msg.wParam]
                     if not func:
                         break
                     func()
 
-                cls.user32.TranslateMessage(ctypes.byref(msg))
-                cls.user32.DispatchMessageA(ctypes.byref(msg))
+                cls.user32.TranslateMessage(ctypes_byref(msg))
+                cls.user32.DispatchMessageA(ctypes_byref(msg))
 
         finally:
             for index, (vk, keyname, modifiers, func) in enumerate(cls.key_mapping):
