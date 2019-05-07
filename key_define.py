@@ -1,6 +1,6 @@
 """
 This code is taken from: http://stackoverflow.com/questions/14489013/simulate-python-keypresses-for-controlling-a-game
-and has been modified by https://github.com/m10x
+and has been modified by https://github.com/m10x for PEP 8 compliance
 """
 import ctypes
 
