@@ -1,4 +1,8 @@
-# TODO check latency ingame
+''' Todo list:
+    Save clipboard before starting hotkeys and restore after stopping
+    Check Latency ingame
+    Possibility to remap p?
+'''
 
 from os import system
 from base64 import b64decode
@@ -13,11 +17,11 @@ from natsort import index_natsorted
 
 # VERSION
 version = "5.0"
-system('mode con: cols=93 lines=40')
+system('mode con: cols=99 lines=40')
 
 listButtons = []
 listCodes = []
-listCodesShow = []
+listStrings = []
 timeOut = 0.05
 versionCheck = ""
 
@@ -38,27 +42,28 @@ def paste():
 
 def configure_time():
     global timeOut
-    _ = system('cls')
+    system('cls')
     logo()
     print("Some users may experience this issue.")
     print("To resolve this start this program as admin and/or increase the latency of the key presses")
     print("The standard latency is 0.05. Even minimal changes like 0.06 can solve this problem!")
+    print("A latency lower than 0.05 is NOT recommended, as Gw2 won't recognize it then!")
     print("Your current latency is {}".format(timeOut))
 
     try:
         inputUser = input("Write any float or Return(0)\n")
     except:
         print("Invalid Input")
-        _ = input("Press Enter to continue")
+        input("Press Enter to continue")
 
     if inputUser == "0":
         return
     if is_float(inputUser):
         timeOut = float(inputUser)
-        _ = input("The Latency has changed to {}. Press Enter to continue".format(timeOut))
+        input("The Latency has changed to {}. Press Enter to continue".format(timeOut))
     else:
         print("Invalid Input")
-        _ = input("Press Enter to continue")
+        input("Press Enter to continue")
 
 
 def is_float(value):
@@ -101,43 +106,44 @@ def logo():
 
 def button_assignmend():
     for i in range(len(listButtons)):
-        print("{}: {}".format(listButtons[i][3:], listCodesShow[i]))
-    print("\nP: Pause Hotkeys and reactivate Console")
+        print("{}: {}".format(listButtons[i][3:], listStrings[i]))
+    print("Latency: {}".format(timeOut))
+    print("\nP: Pause hotkeys and reactivate console")
 
 
 def save_to_file():
     print("Saving config to .\gw2chatcodebuddy.config")
     try:
-        f = open("gw2chatcodebuddy.config", "w+")
-        for x in range(0, len(listButtons)):
-            tmpString = ("{};{};{}\n").format(listButtons[x],
-                                              listCodes[x],
-                                              listCodesShow[x])
-            f.write(tmpString)
+        with open("gw2chatcodebuddy.config", "w+") as f:
+            f.write("Latency;{}\n".format(timeOut))
+            for x in range(0, len(listButtons)):
+                tmpString = ("{};{};{}\n").format(listButtons[x],
+                                                  listCodes[x],
+                                                  listStrings[x])
+                f.write(tmpString)
+            print("Successfully saved config to .\gw2chatcodebuddy.config")
     except:
         print("Failed to write to .\gw2chatcodebuddy.config")
-    finally:
-        f.close()
-        _ = input("Press Enter to continue")
+    input("Press Enter to continue")
 
 
 def load_from_file():
     try:
-        f = open("gw2chatcodebuddy.config", "r")
-        lines = f.readlines()
+        with open("gw2chatcodebuddy.config", "r") as f:
+            listButtons.clear()
+            listCodes.clear()
+            listStrings.clear()
+            for line in f:
+                config = line.split(";")
+                if config[0] == "Latency":
+                    global timeOut
+                    timeOut = float(config[1].strip())
+                else:
+                    assign_button(config[0], config[2][:-1], config[1].strip(), True)
+            print("Successfully loaded config from .\gw2chatcodebuddy.config")
     except:
         print("Couldn't open .\gw2chatcodebuddy.config")
-        return
-    finally:
-        f.close()
-    listButtons.clear()
-    listCodes.clear()
-    listCodesShow.clear()
-    for line in lines:
-        config = line.split(";")
-        assign_button(config[0], config[2][:-1], config[1].strip(), True)
-    print("Successfully loaded config from .\gw2chatcodebuddy.config")
-    _ = input("Press Enter to continue")
+    input("Press Enter to continue")
 
 
 def check_in_list(_list, _data):
@@ -150,7 +156,7 @@ def check_in_list(_list, _data):
 
 def assign_button(button, itemname, itemcode, loading=False):
 
-    global listButtons, listCodes, listCodesShow
+    global listButtons, listCodes, listStrings
 
     if (not loading):
         anzahl = 0
@@ -159,27 +165,25 @@ def assign_button(button, itemname, itemcode, loading=False):
                 anzahl = int(input("How much of "+itemname+" (1-250)?\n"))
             except:
                 print("Invalid Input")
-                _ = input("Press Enter to continue")
+                input("Press Enter to continue")
         listIndex = check_in_list(listButtons, button)  # check if button is already assigned
         if (listIndex == -1):
             listButtons.append(button)
             listCodes.append(str(calculate(anzahl, itemcode)))
-            listCodesShow.append(str(anzahl) + " " + itemname)
+            listStrings.append(str(anzahl) + " " + itemname)
         else:
             listCodes[listIndex] = str(calculate(anzahl, itemcode))
-            listCodesShow[listIndex] = str(anzahl) + " " + itemname
-    else:  # laden von config
+            listStrings[listIndex] = str(anzahl) + " " + itemname
+    else:  # loading from config
         listButtons.append(button)
         listCodes.append(itemcode)
-        listCodesShow.append(itemname)
+        listStrings.append(itemname)
 
     # sort lists simultaneously
-    # listButtons, listCodes, listCodesShow = map(list, zip(*sorted(zip(listButtons, listCodes, listCodesShow), reverse=False)))
-
     sortIndex = index_natsorted(listButtons)
     listButtons = [listButtons[i] for i in sortIndex]
     listCodes = [listCodes[i] for i in sortIndex]
-    listCodesShow = [listCodesShow[i] for i in sortIndex]
+    listStrings = [listStrings[i] for i in sortIndex]
 
     listIndex = check_in_list(listButtons, button)
     keyValue = GlobalHotKeys.__dict__.get(button)
@@ -220,31 +224,35 @@ def customHotkey():
     key = input().strip().upper()
     vkkey = "VK_{}".format(key)
     if GlobalHotKeys.__dict__.get(vkkey) is None:
-        _ = input("Invalid input ({}). Press 'Enter' to continue.".format(vkkey))
+        input("Invalid input ({}). Press 'Enter' to continue.".format(vkkey))
         return
     liorkp(vkkey)
 
 
 def liorkp(button):
-    inputUser = 10
-    while 0 > inputUser or 8 < inputUser:
+    inputUser = -1
+    while 0 > inputUser or 10 < inputUser:  # count of options
         try:
-            inputUser = int(input("What do you want to add? LI/LD(0), W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), W6 KP(6)\nFractals(7), Custom(8), Remove(9)\n"))
+            inputUser = int(input("What do you want to add? W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), W6 KP(6), LI/LD(7)\nFractals(8), Custom(9), Remove(10), Return(0)\n"))
         except:
             print("Invalid Input")
-            _ = input("Press Enter to continue")
+            input("Press Enter to continue")
+
+        # Return
+        if inputUser == 0:
+            return
 
         # LI or LD
-        if inputUser == 0:
-            inputUser = 10
+        if inputUser == 7:
+            inputUser = -1
             while 0 > inputUser or 2 < inputUser:
                 try:
                     inputUser = int(input("Legendary Insight (1), Legendary Divination (2), Return (0)\n"))
                 except:
                     print("Invalid Input")
-                    _ = input("Press Enter to continue")
+                    input("Press Enter to continue")
                 if inputUser == 0:
-                    inputUser = 10
+                    inputUser = -1
                     break
                 elif inputUser == 1:
                     assign_button(button, "Legendary Insight", "[&AgH2LQEA]")
@@ -253,15 +261,15 @@ def liorkp(button):
 
         # W1 KPs
         elif inputUser == 1:
-            inputUser = 10
+            inputUser = -1
             while 0 > inputUser or 3 < inputUser:
                 try:
                     inputUser = int(input("Vale Guardian (1), Gorseval (2), Sabetha (3), Return (0)\n"))
                 except:
                     print("Invalid Input")
-                    _ = input("Press Enter to continue")
+                    input("Press Enter to continue")
                 if inputUser == 0:
-                    inputUser = 10
+                    inputUser = -1
                     break
                 elif inputUser == 1:
                     assign_button(button, "Vale Guardian KP", "[&AgGJLwEA]")
@@ -272,15 +280,15 @@ def liorkp(button):
 
         # W2 KPs
         elif inputUser == 2:
-            inputUser = 10
+            inputUser = -1
             while 0 > inputUser or 2 < inputUser:
                 try:
                     inputUser = int(input("Slothasor (1), Matthias (2), Return (0)\n"))
                 except:
                     print("Invalid Input")
-                    _ = input("Press Enter to continue")
+                    input("Press Enter to continue")
                 if inputUser == 0:
-                    inputUser = 10
+                    inputUser = -1
                     break
                 elif inputUser == 1:
                     assign_button(button, "Slothasor KP", "[&AgGKLwEA]")
@@ -289,15 +297,15 @@ def liorkp(button):
 
         # W3 KPs
         elif inputUser == 3:
-            inputUser = 10
+            inputUser = -1
             while 0 > inputUser or 3 < inputUser:
                 try:
                     inputUser = int(input("Escort (1), Keep Construct (2), Xera (3), Return (0)\n"))
                 except:
                     print("Invalid Input")
-                    _ = input("Press Enter to continue")
+                    input("Press Enter to continue")
                 if inputUser == 0:
-                    inputUser = 10
+                    inputUser = -1
                     break
                 elif inputUser == 1:
                     assign_button(button, "Escort KP", "[&AgFtNAEA]")
@@ -308,15 +316,15 @@ def liorkp(button):
 
         # W4 KPs
         elif inputUser == 4:
-            inputUser = 10
+            inputUser = -1
             while 0 > inputUser or 4 < inputUser:
                 try:
                     inputUser = int(input("Cairn (1), Mursaat Overseer (2), Samarog (3), Deimos (4), Return (0)\n"))
                 except:
                     print("Invalid Input")
-                    _ = input("Press Enter to continue")
+                    input("Press Enter to continue")
                 if inputUser == 0:
-                    inputUser = 10
+                    inputUser = -1
                     break
                 elif inputUser == 1:
                     assign_button(button, "Cairn KP", "[&AgHvOgEA]")
@@ -329,15 +337,15 @@ def liorkp(button):
 
         # W5 KPs
         elif inputUser == 5:
-            inputUser = 10
+            inputUser = -1
             while 0 > inputUser or 4 < inputUser:
                 try:
                     inputUser = int(input("Soulless Horror (1), River of Souls (2), Statues of Grenth (3), Voice in the Void (4), Return (0)\n"))
                 except:
                     print("Invalid Input")
-                    _ = input("Press Enter to continue")
+                    input("Press Enter to continue")
                 if inputUser == 0:
-                    inputUser = 10
+                    inputUser = -1
                     break
                 elif inputUser == 1:
                     assign_button(button, "Soulless Horror KP", "[&AgHpTwEA]")
@@ -350,83 +358,84 @@ def liorkp(button):
 
         # W6 KPs
         elif inputUser == 6:
-            inputUser = 10
+            inputUser = -1
             while 0 > inputUser or 3 < inputUser:
                 try:
                     inputUser = int(input("Conjured Amalgamate (1), Twin Largos (2), Qadim (3), Return (0)\n"))
                 except:
                     print("Invalid Input")
-                    _ = input("Press Enter to continue")
+                    input("Press Enter to continue")
                 if inputUser == 0:
-                    inputUser = 10
+                    inputUser = -1
                     break
                 elif inputUser == 1:
                     assign_button(button, "Conjured Amalgamate KP", "[&AgHfWQEA]")
                 elif inputUser == 2:
-                    inputUser2 = 10
-                    while 0 > inputUser2 or 4 < inputUser2:
+                    inputUser = -1
+                    while 0 > inputUser or 4 < inputUser:
                         try:
-                            inputUser2 = int(input("Token (1), Bronze Trophy (2), Silver Trophy (3), Gold Trophy (4), Return (0)\n"))
+                            inputUser = int(input("Token (1), Bronze Trophy (2), Silver Trophy (3), Gold Trophy (4), Return (0)\n"))
                         except:
                             print("Invalid Input")
-                            _ = input("Press Enter to continue")
-                        if inputUser2 == 0:
-                            inputUser2 = 10
+                            input("Press Enter to continue")
+                        if inputUser == 0:
+                            inputUser = -1
                             break
-                        elif inputUser2 == 1:
+                        elif inputUser == 1:
                             assign_button(button, "Twin Largos Token", "[&AgEcWwEA]")
-                        elif inputUser2 == 2:
+                        elif inputUser == 2:
                             assign_button(button, "Bronze Twin Largos Trophy", "[&AgE8WgEA]")
-                        elif inputUser2 == 3:
+                        elif inputUser == 3:
                             assign_button(button, "Silver Twin Largos Trophy", "[&AgEQWgEA]")
-                        elif inputUser2 == 4:
+                        elif inputUser == 4:
                             assign_button(button, "Gold Twin Largos Trophy", "[&AgHuWQEA]")
                 elif inputUser == 3:
                     assign_button(button, "Qadim KP", "[&AgFFWgEA]")
 
         # Fractals KPs
-        elif inputUser == 7:
-            inputUser = 10
+        elif inputUser == 8:
+            inputUser = -1
             while 0 > inputUser or 1 < inputUser:
                 try:
                     inputUser = int(input("100 CM (1), Return (0)\n"))
                 except:
                     print("Invalid Input")
-                    _ = input("Press Enter to continue")
+                    input("Press Enter to continue")
                 if inputUser == 0:
-                    inputUser = 10
+                    inputUser = -1
                     break
                 elif inputUser == 1:
                     assign_button(button, "100 CM KP", "[&AgFPPwEA]")
 
         # Custom
-        elif inputUser == 8:
+        elif inputUser == 9:
             try:
                 inputChatcode = input("Paste a Chatcode or Return (0)\n")
             except:
                 print("Invalid Input")
-                _ = input("Press Enter to continue")
+                input("Press Enter to continue")
             if inputChatcode != "0":
                 inputChatcodeName = input("Give it a name or Return (0)\n")
                 if inputChatcodeName != "0":
                     assign_button(button, inputChatcodeName, inputChatcode)
                 else:
-                    inputUser = 10
+                    inputUser = -1
             else:
-                inputUser = 10
+                inputUser = -1
 
         # Remove Button
-        elif inputUser == 9:
-            global listButtons, listCodes, listCodesShow
+        elif inputUser == 10:
+            global listButtons, listCodes, listStrings
             if listButtons.count(button) == 1:
                 index = listButtons.index(button)
                 del listButtons[index]
                 del listCodes[index]
-                del listCodesShow[index]
+                del listStrings[index]
 
                 GlobalHotKeys.unregister(GlobalHotKeys.__dict__.get(button))
             else:
-                input("{} hasn't been assigned yet! Press Enter to continue...".format(button[3]))
+                print("{} hasn't been assigned yet!".format(button[3:]))
+                input("Press Enter to continue")
             return
 
 
@@ -459,12 +468,12 @@ def main():
     start = 0
     while quitpls == 0:
         while start == 0:
-            _ = system('cls')
+            system('cls')
             logo()
             print(versionCheck)
             button_assignmend()
-            print("\nWrite 1-11 to assign a chatcode to F1-F11, 'c' for other keys,'g' to start, 's' to save, 'l' to load")
-            print("'q' to quit, when the chatbox only sort of 'blinks' press 'b'\n")
+            print("\nWrite 1-11 to assign a chatcode to F1-F11, 'c' for other keys, 's' to save, 'l' to load")
+            print("'g' to start, 'q' to quit, when the chatbox only sort of 'blinks' press 'b'\n")
 
             inputUser = input()
             if inputUser == "s":
