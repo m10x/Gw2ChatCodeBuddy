@@ -1,13 +1,11 @@
-from ctypes import byref as ctypes_byref
-from ctypes.windll import user32 as windll_user32
-from ctypes.wintypes import MSG as wintypes_MSG
+import ctypes
 import win32con
 
 
 class GlobalHotKeys(object):
 
     key_mapping = []
-    user32 = windll_user32
+    user32 = ctypes.windll.user32
     MOD_ALT = win32con.MOD_ALT
     MOD_CTRL = win32con.MOD_CONTROL
     MOD_CONTROL = win32con.MOD_CONTROL
@@ -54,16 +52,16 @@ class GlobalHotKeys(object):
                 return
 
         try:
-            msg = wintypes_MSG()
-            while cls.user32.GetMessageA(ctypes_byref(msg), None, 0, 0) != 0:
+            msg = ctypes.wintypes.MSG()
+            while cls.user32.GetMessageA(ctypes.byref(msg), None, 0, 0) != 0:
                 if msg.message == win32con.WM_HOTKEY:
                     (vk, keyname, modifiers, func) = cls.key_mapping[msg.wParam]
                     if not func:
                         break
                     func()
 
-                cls.user32.TranslateMessage(ctypes_byref(msg))
-                cls.user32.DispatchMessageA(ctypes_byref(msg))
+                cls.user32.TranslateMessage(ctypes.byref(msg))
+                cls.user32.DispatchMessageA(ctypes.byref(msg))
 
         finally:
             for index, (vk, keyname, modifiers, func) in enumerate(cls.key_mapping):
