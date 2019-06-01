@@ -58,9 +58,9 @@ tested on fresh installed win7 & 10
 ## Release notes:
 V5.0 released (01.06.2019)
 - custom hotkeys! Choose now between 57 possible hotkeys!
+- option to remove a hotkey assignmend (e.g. if the hotkey can't be used)
 - chat "blinking" fix option (only few users had this problem)
-- reduced size by 30% (by adjusting import statements)
-- option to remove a hotkey assignmend
+- reduced size by more than 30% (by adjusting import statements)
 - temporarly save clipboard before activating hotkeys and restoring it afterwards
 - more return options
 - many bug fixes, code improvements and text changes
