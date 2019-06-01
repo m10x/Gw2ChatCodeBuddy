@@ -56,7 +56,7 @@ https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 ## Release notes:
-V5.0 released soon
+V5.0 released (01.06.2019)
 - custom hotkeys! Choose now between 57 possible hotkeys!
 - chat "blinking" fix option (only few users had this problem)
 - reduced size by 30% (by adjusting import statements)
