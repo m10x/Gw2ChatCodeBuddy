@@ -1,7 +1,6 @@
 ''' Todo list:
-    Check Latency ingame
     Possibility to remap p?
-    use jaraco instead of pyperclip? cause of images etc...
+    use jaraco instead of pyperclip? cause of images/efficency etc...
 '''
 
 from os import system
@@ -48,8 +47,8 @@ def configure_time():
     logo()
     print("Some users may experience this issue.")
     print("To resolve this start this program as admin and/or increase the latency of the key presses")
-    print("The standard latency is 0.05. Even minimal changes like 0.06 can solve this problem!")
-    print("A latency lower than 0.05 is NOT recommended, as Gw2 won't recognize it then!")
+    print("The standard latency is 0.05. Even minimal changes like 0.06 could maybe solve this problem!")
+    print("Please tell me if this helps or if the problem still persists. admin@m10x.de")
     print("Your current latency is {}".format(timeOut))
 
     try:
