@@ -1,7 +1,7 @@
 # Gw2 Chat Code Buddy
 [![Release](https://img.shields.io/github/release/m10x/gw2chatcodebuddy.svg?color=brightgreen)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Github Downloads](https://img.shields.io/github/downloads/m10x/gw2chatcodebuddy/total.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
-[![Size](https://img.shields.io/badge/size-5.78mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Size](https://img.shields.io/badge/size-5.79mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
 ## Introduction
