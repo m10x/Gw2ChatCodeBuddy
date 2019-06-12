@@ -1,5 +1,4 @@
 import ctypes
-import ctypes.wintypes
 import win32con
 
 
@@ -13,8 +12,9 @@ class GlobalHotKeys(object):
     MOD_SHIFT = win32con.MOD_SHIFT
     MOD_WIN = win32con.MOD_WIN
 
+
     @classmethod
-    def register(cls, vk, modifier=0, func=None):
+    def register(cls, vk, keyname, modifier=0, func=None):
 
         indexof = [i for i, s in enumerate(cls.key_mapping) if vk in s]
         if indexof != []:
@@ -23,11 +23,18 @@ class GlobalHotKeys(object):
         # Called as a decorator?
         if func is None:
             def register_decorator(f):
-                cls.register(vk, modifier, f)
+                cls.register(vk, keyname, modifier, f)
                 return f
             return register_decorator
         else:
-            cls.key_mapping.append((vk, modifier, func))
+            cls.key_mapping.append((vk, keyname, modifier, func))
+
+
+    @classmethod
+    def unregister(cls, vk):  # use vk number to delete from key_mapping
+        indexof = [i for i, s in enumerate(cls.key_mapping) if vk in s]
+        if indexof != []:
+            del cls.key_mapping[indexof[0]]
 
 
     @classmethod
@@ -36,15 +43,19 @@ class GlobalHotKeys(object):
         Start the message pump
         """
 
-        for index, (vk, modifiers, func) in enumerate(cls.key_mapping):
+        for index, (vk, keyname, modifiers, func) in enumerate(cls.key_mapping):
             if not cls.user32.RegisterHotKey(None, index, modifiers, vk):
-                raise Exception('Unable to register hot key: ' + str(vk))
+                # raise Exception('Unable to register hot key: ' + str(vk))
+                input("Can't assign {} as hotkey. Press Enter to continue...".format(keyname[3:]))
+                for index, (vk, keyname, modifiers, func) in enumerate(cls.key_mapping):
+                    cls.user32.UnregisterHotKey(None, index)
+                return
 
         try:
             msg = ctypes.wintypes.MSG()
             while cls.user32.GetMessageA(ctypes.byref(msg), None, 0, 0) != 0:
                 if msg.message == win32con.WM_HOTKEY:
-                    (vk, modifiers, func) = cls.key_mapping[msg.wParam]
+                    (vk, keyname, modifiers, func) = cls.key_mapping[msg.wParam]
                     if not func:
                         break
                     func()
@@ -53,7 +64,7 @@ class GlobalHotKeys(object):
                 cls.user32.DispatchMessageA(ctypes.byref(msg))
 
         finally:
-            for index, (vk, modifiers, func) in enumerate(cls.key_mapping):
+            for index, (vk, keyname, modifiers, func) in enumerate(cls.key_mapping):
                 cls.user32.UnregisterHotKey(None, index)
 
 
@@ -69,6 +80,7 @@ class GlobalHotKeys(object):
     def _include_alpha_vks(cls):
         for key_code in (range(ord('A'), ord('Z') + 1)):
             setattr(cls, 'VK_' + chr(key_code), key_code)
+
 
     @classmethod
     def _include_numeric_vks(cls):
