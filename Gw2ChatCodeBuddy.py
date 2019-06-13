@@ -234,7 +234,7 @@ def liorkp(button):
     inputUser = -1
     while 0 > inputUser or 10 < inputUser:  # count of options
         try:
-            inputUser = int(input("What do you want to add? W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), W6 KP(6), LI/LD(7)\nFractals(8), Custom(9), Remove(10), Return(0)\n"))
+            inputUser = int(input("What do you want to add? W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), W6 KP(6), W7 KP(7), LI/LD(8)\nFractals(9), Custom(10), Remove(11), Return(0)\n"))
         except:
             print("Invalid Input")
             input("Press Enter to continue")
@@ -244,7 +244,7 @@ def liorkp(button):
             return
 
         # LI or LD
-        if inputUser == 7:
+        if inputUser == 8:
             inputUser = -1
             while 0 > inputUser or 2 < inputUser:
                 try:
@@ -390,11 +390,33 @@ def liorkp(button):
                             assign_button(button, "Silver Twin Largos Trophy", "[&AgEQWgEA]")
                         elif inputUser == 4:
                             assign_button(button, "Gold Twin Largos Trophy", "[&AgHuWQEA]")
+                        elif inputUser == 3:
+                            assign_button(button, "Qadim KP", "[&AgFFWgEA]")
+                    
+                    #
+        # W7 KPs
+        elif inputUser == 7:
+            inputUser = -1
+            while 0 > inputUser or 3 < inputUser:
+                try:
+                    inputUser = int(input("Cardinal Sabir (1), Cardinal Adina (2), Qadim the Peerless (3), Return (0)\n"))
+                except:
+                    print("Invalid Input")
+                    input("Press Enter to continue")
+                if inputUser == 0:
+                    inputUser = -1
+                    break
+                elif inputUser == 1:
+                    assign_button(button, "Cardinal Sabir's KP", "[&AgGGZAEA]")
+                elif inputUser == 2:
+                    assign_button(button, "Cardinal Adina's KP", "[&AgFuZAEA]")
                 elif inputUser == 3:
-                    assign_button(button, "Qadim KP", "[&AgFFWgEA]")
-
+                    assign_button(button, "Ether Djinn's Token", "[&AgEnZAEA]")
+                    
+                        
+    
         # Fractals KPs
-        elif inputUser == 8:
+        elif inputUser == 9:
             inputUser = -1
             while 0 > inputUser or 1 < inputUser:
                 try:
@@ -409,7 +431,7 @@ def liorkp(button):
                     assign_button(button, "100 CM KP", "[&AgFPPwEA]")
 
         # Custom
-        elif inputUser == 9:
+        elif inputUser == 10:
             try:
                 inputChatcode = input("Paste a Chatcode or Return (0)\n")
             except:
@@ -425,7 +447,7 @@ def liorkp(button):
                 inputUser = -1
 
         # Remove Button
-        elif inputUser == 10:
+        elif inputUser == 11:
             global listButtons, listCodes, listStrings
             if listButtons.count(button) == 1:
                 index = listButtons.index(button)
