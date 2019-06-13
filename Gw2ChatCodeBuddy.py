@@ -16,7 +16,7 @@ from natsort import index_natsorted
 
 
 # VERSION
-version = "5.0"
+version = "5.1"
 system('mode con: cols=99 lines=40')
 
 listButtons = []
@@ -232,9 +232,9 @@ def customHotkey():
 
 def liorkp(button):
     inputUser = -1
-    while 0 > inputUser or 10 < inputUser:  # count of options
+    while inputUser < 0 or inputUser > 5:  # count of options
         try:
-            inputUser = int(input("What do you want to add? W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), W6 KP(6), W7 KP(7), LI/LD(8)\nFractals(9), Custom(10), Remove(11), Return(0)\n"))
+            inputUser = int(input("What do you want to add?\nLI/LD(1), Wings(2), Fractals(3), Custom(4), Remove(5), Return(0)\n"))
         except:
             print("Invalid Input")
             input("Press Enter to continue")
@@ -244,9 +244,9 @@ def liorkp(button):
             return
 
         # LI or LD
-        if inputUser == 8:
+        if inputUser == 1:
             inputUser = -1
-            while 0 > inputUser or 2 < inputUser:
+            while inputUser < 0 or inputUser > 2:
                 try:
                     inputUser = int(input("Legendary Insight (1), Legendary Divination (2), Return (0)\n"))
                 except:
@@ -260,165 +260,174 @@ def liorkp(button):
                 elif inputUser == 2:
                     assign_button(button, "Legendary Divination", "[&AgGlWQEA]")
 
-        # W1 KPs
-        elif inputUser == 1:
-            inputUser = -1
-            while 0 > inputUser or 3 < inputUser:
-                try:
-                    inputUser = int(input("Vale Guardian (1), Gorseval (2), Sabetha (3), Return (0)\n"))
-                except:
-                    print("Invalid Input")
-                    input("Press Enter to continue")
-                if inputUser == 0:
-                    inputUser = -1
-                    break
-                elif inputUser == 1:
-                    assign_button(button, "Vale Guardian KP", "[&AgGJLwEA]")
-                elif inputUser == 2:
-                    assign_button(button, "Gorseval KP", "[&AgG3LwEA]")
-                elif inputUser == 3:
-                    assign_button(button, "Sabetha KP", "[&AgGgLwEA]")
-
-        # W2 KPs
+        # Wing KPs
         elif inputUser == 2:
             inputUser = -1
-            while 0 > inputUser or 2 < inputUser:
+            while inputUser < 0 or inputUser > 7:  # count of wings
                 try:
-                    inputUser = int(input("Slothasor (1), Matthias (2), Return (0)\n"))
+                    inputUser = int(input("W1 KP(1), W2 KP(2), W3 KP(3), W4 KP(4), W5 KP(5), W6 KP(6), W7 KP(7), Return (0)\n"))
                 except:
                     print("Invalid Input")
                     input("Press Enter to continue")
-                if inputUser == 0:
-                    inputUser = -1
-                    break
-                elif inputUser == 1:
-                    assign_button(button, "Slothasor KP", "[&AgGKLwEA]")
-                elif inputUser == 2:
-                    assign_button(button, "Matthias KP", "[&AgFvLwEA]")
+            if inputUser == 0:
+                inputUser = -1
 
-        # W3 KPs
+            # W1 KPs
+            elif inputUser == 1:
+                inputUser = -1
+                while inputUser < 0 or inputUser > 3:
+                    try:
+                        inputUser = int(input("Vale Guardian (1), Gorseval (2), Sabetha (3), Return (0)\n"))
+                    except:
+                        print("Invalid Input")
+                        input("Press Enter to continue")
+                    if inputUser == 0:
+                        inputUser = -1
+                        break
+                    elif inputUser == 1:
+                        assign_button(button, "Vale Guardian KP", "[&AgGJLwEA]")
+                    elif inputUser == 2:
+                        assign_button(button, "Gorseval KP", "[&AgG3LwEA]")
+                    elif inputUser == 3:
+                        assign_button(button, "Sabetha KP", "[&AgGgLwEA]")
+
+            # W2 KPs
+            elif inputUser == 2:
+                inputUser = -1
+                while inputUser < 0 or inputUser > 2:
+                    try:
+                        inputUser = int(input("Slothasor (1), Matthias (2), Return (0)\n"))
+                    except:
+                        print("Invalid Input")
+                        input("Press Enter to continue")
+                    if inputUser == 0:
+                        inputUser = -1
+                        break
+                    elif inputUser == 1:
+                        assign_button(button, "Slothasor KP", "[&AgGKLwEA]")
+                    elif inputUser == 2:
+                        assign_button(button, "Matthias KP", "[&AgFvLwEA]")
+
+            # W3 KPs
+            elif inputUser == 3:
+                inputUser = -1
+                while inputUser < 0 or inputUser > 3:
+                    try:
+                        inputUser = int(input("Escort (1), Keep Construct (2), Xera (3), Return (0)\n"))
+                    except:
+                        print("Invalid Input")
+                        input("Press Enter to continue")
+                    if inputUser == 0:
+                        inputUser = -1
+                        break
+                    elif inputUser == 1:
+                        assign_button(button, "Escort KP", "[&AgFtNAEA]")
+                    elif inputUser == 2:
+                        assign_button(button, "Keep Construct KP", "[&AgE2NAEA]")
+                    elif inputUser == 3:
+                        assign_button(button, "Xera KP", "[&AgFeNAEA]")
+
+            # W4 KPs
+            elif inputUser == 4:
+                inputUser = -1
+                while inputUser < 0 or inputUser > 4:
+                    try:
+                        inputUser = int(input("Cairn (1), Mursaat Overseer (2), Samarog (3), Deimos (4), Return (0)\n"))
+                    except:
+                        print("Invalid Input")
+                        input("Press Enter to continue")
+                    if inputUser == 0:
+                        inputUser = -1
+                        break
+                    elif inputUser == 1:
+                        assign_button(button, "Cairn KP", "[&AgHvOgEA]")
+                    elif inputUser == 2:
+                        assign_button(button, "Mursaat Overseer KP", "[&AgGNOQEA]")
+                    elif inputUser == 3:
+                        assign_button(button, "Samarog KP", "[&AgHXOAEA]")
+                    elif inputUser == 4:
+                        assign_button(button, "Deimos KP", "[&AgGeOgEA]")
+
+            # W5 KPs
+            elif inputUser == 5:
+                inputUser = -1
+                while inputUser < 0 or inputUser > 4:
+                    try:
+                        inputUser = int(input("Soulless Horror (1), River of Souls (2), Statues of Grenth (3), Voice in the Void (4), Return (0)\n"))
+                    except:
+                        print("Invalid Input")
+                        input("Press Enter to continue")
+                    if inputUser == 0:
+                        inputUser = -1
+                        break
+                    elif inputUser == 1:
+                        assign_button(button, "Soulless Horror KP", "[&AgHpTwEA]")
+                    elif inputUser == 2:
+                        assign_button(button, "River of Souls KP", "[&AgEZTwEA]")
+                    elif inputUser == 3:
+                        assign_button(button, "Statues of Grenth KP", "[&AgEoTwEA]")
+                    elif inputUser == 4:
+                        assign_button(button, "Voice in the Void KP", "[&AgGBTgEA]")
+
+            # W6 KPs
+            elif inputUser == 6:
+                inputUser = -1
+                while inputUser < 0 or inputUser > 3:
+                    try:
+                        inputUser = int(input("Conjured Amalgamate (1), Twin Largos (2), Qadim (3), Return (0)\n"))
+                    except:
+                        print("Invalid Input")
+                        input("Press Enter to continue")
+                    if inputUser == 0:
+                        inputUser = -1
+                        break
+                    elif inputUser == 1:
+                        assign_button(button, "Conjured Amalgamate KP", "[&AgHfWQEA]")
+                    elif inputUser == 2:
+                        inputUser = -1
+                        while inputUser < 0 or inputUser > 4:
+                            try:
+                                inputUser = int(input("Token (1), Bronze Trophy (2), Silver Trophy (3), Gold Trophy (4), Return (0)\n"))
+                            except:
+                                print("Invalid Input")
+                                input("Press Enter to continue")
+                            if inputUser == 0:
+                                inputUser = -1
+                                break
+                            elif inputUser == 1:
+                                assign_button(button, "Twin Largos Token", "[&AgEcWwEA]")
+                            elif inputUser == 2:
+                                assign_button(button, "Bronze Twin Largos Trophy", "[&AgE8WgEA]")
+                            elif inputUser == 3:
+                                assign_button(button, "Silver Twin Largos Trophy", "[&AgEQWgEA]")
+                            elif inputUser == 4:
+                                assign_button(button, "Gold Twin Largos Trophy", "[&AgHuWQEA]")
+                            elif inputUser == 3:
+                                assign_button(button, "Qadim KP", "[&AgFFWgEA]")
+
+            # W7 KPs
+            elif inputUser == 7:
+                inputUser = -1
+                while inputUser < 0 or inputUser > 3:
+                    try:
+                        inputUser = int(input("Cardinal Sabir (1), Cardinal Adina (2), Qadim the Peerless (3), Return (0)\n"))
+                    except:
+                        print("Invalid Input")
+                        input("Press Enter to continue")
+                    if inputUser == 0:
+                        inputUser = -1
+                        break
+                    elif inputUser == 1:
+                        assign_button(button, "Cardinal Sabir's KP", "[&AgGGZAEA]")
+                    elif inputUser == 2:
+                        assign_button(button, "Cardinal Adina's KP", "[&AgFuZAEA]")
+                    elif inputUser == 3:
+                        assign_button(button, "Ether Djinn's Token", "[&AgEnZAEA]")
+
+        # Fractals KPs
         elif inputUser == 3:
             inputUser = -1
-            while 0 > inputUser or 3 < inputUser:
-                try:
-                    inputUser = int(input("Escort (1), Keep Construct (2), Xera (3), Return (0)\n"))
-                except:
-                    print("Invalid Input")
-                    input("Press Enter to continue")
-                if inputUser == 0:
-                    inputUser = -1
-                    break
-                elif inputUser == 1:
-                    assign_button(button, "Escort KP", "[&AgFtNAEA]")
-                elif inputUser == 2:
-                    assign_button(button, "Keep Construct KP", "[&AgE2NAEA]")
-                elif inputUser == 3:
-                    assign_button(button, "Xera KP", "[&AgFeNAEA]")
-
-        # W4 KPs
-        elif inputUser == 4:
-            inputUser = -1
-            while 0 > inputUser or 4 < inputUser:
-                try:
-                    inputUser = int(input("Cairn (1), Mursaat Overseer (2), Samarog (3), Deimos (4), Return (0)\n"))
-                except:
-                    print("Invalid Input")
-                    input("Press Enter to continue")
-                if inputUser == 0:
-                    inputUser = -1
-                    break
-                elif inputUser == 1:
-                    assign_button(button, "Cairn KP", "[&AgHvOgEA]")
-                elif inputUser == 2:
-                    assign_button(button, "Mursaat Overseer KP", "[&AgGNOQEA]")
-                elif inputUser == 3:
-                    assign_button(button, "Samarog KP", "[&AgHXOAEA]")
-                elif inputUser == 4:
-                    assign_button(button, "Deimos KP", "[&AgGeOgEA]")
-
-        # W5 KPs
-        elif inputUser == 5:
-            inputUser = -1
-            while 0 > inputUser or 4 < inputUser:
-                try:
-                    inputUser = int(input("Soulless Horror (1), River of Souls (2), Statues of Grenth (3), Voice in the Void (4), Return (0)\n"))
-                except:
-                    print("Invalid Input")
-                    input("Press Enter to continue")
-                if inputUser == 0:
-                    inputUser = -1
-                    break
-                elif inputUser == 1:
-                    assign_button(button, "Soulless Horror KP", "[&AgHpTwEA]")
-                elif inputUser == 2:
-                    assign_button(button, "River of Souls KP", "[&AgEZTwEA]")
-                elif inputUser == 3:
-                    assign_button(button, "Statues of Grenth KP", "[&AgEoTwEA]")
-                elif inputUser == 4:
-                    assign_button(button, "Voice in the Void KP", "[&AgGBTgEA]")
-
-        # W6 KPs
-        elif inputUser == 6:
-            inputUser = -1
-            while 0 > inputUser or 3 < inputUser:
-                try:
-                    inputUser = int(input("Conjured Amalgamate (1), Twin Largos (2), Qadim (3), Return (0)\n"))
-                except:
-                    print("Invalid Input")
-                    input("Press Enter to continue")
-                if inputUser == 0:
-                    inputUser = -1
-                    break
-                elif inputUser == 1:
-                    assign_button(button, "Conjured Amalgamate KP", "[&AgHfWQEA]")
-                elif inputUser == 2:
-                    inputUser = -1
-                    while 0 > inputUser or 4 < inputUser:
-                        try:
-                            inputUser = int(input("Token (1), Bronze Trophy (2), Silver Trophy (3), Gold Trophy (4), Return (0)\n"))
-                        except:
-                            print("Invalid Input")
-                            input("Press Enter to continue")
-                        if inputUser == 0:
-                            inputUser = -1
-                            break
-                        elif inputUser == 1:
-                            assign_button(button, "Twin Largos Token", "[&AgEcWwEA]")
-                        elif inputUser == 2:
-                            assign_button(button, "Bronze Twin Largos Trophy", "[&AgE8WgEA]")
-                        elif inputUser == 3:
-                            assign_button(button, "Silver Twin Largos Trophy", "[&AgEQWgEA]")
-                        elif inputUser == 4:
-                            assign_button(button, "Gold Twin Largos Trophy", "[&AgHuWQEA]")
-                        elif inputUser == 3:
-                            assign_button(button, "Qadim KP", "[&AgFFWgEA]")
-                    
-                    #
-        # W7 KPs
-        elif inputUser == 7:
-            inputUser = -1
-            while 0 > inputUser or 3 < inputUser:
-                try:
-                    inputUser = int(input("Cardinal Sabir (1), Cardinal Adina (2), Qadim the Peerless (3), Return (0)\n"))
-                except:
-                    print("Invalid Input")
-                    input("Press Enter to continue")
-                if inputUser == 0:
-                    inputUser = -1
-                    break
-                elif inputUser == 1:
-                    assign_button(button, "Cardinal Sabir's KP", "[&AgGGZAEA]")
-                elif inputUser == 2:
-                    assign_button(button, "Cardinal Adina's KP", "[&AgFuZAEA]")
-                elif inputUser == 3:
-                    assign_button(button, "Ether Djinn's Token", "[&AgEnZAEA]")
-                    
-                        
-    
-        # Fractals KPs
-        elif inputUser == 9:
-            inputUser = -1
-            while 0 > inputUser or 1 < inputUser:
+            while inputUser < 0 or inputUser > 1:
                 try:
                     inputUser = int(input("100 CM (1), Return (0)\n"))
                 except:
@@ -431,7 +440,7 @@ def liorkp(button):
                     assign_button(button, "100 CM KP", "[&AgFPPwEA]")
 
         # Custom
-        elif inputUser == 10:
+        elif inputUser == 4:
             try:
                 inputChatcode = input("Paste a Chatcode or Return (0)\n")
             except:
@@ -447,7 +456,7 @@ def liorkp(button):
                 inputUser = -1
 
         # Remove Button
-        elif inputUser == 11:
+        elif inputUser == 5:
             global listButtons, listCodes, listStrings
             if listButtons.count(button) == 1:
                 index = listButtons.index(button)
