@@ -61,7 +61,7 @@ Thanks to [Keldorb](https://github.com/Keldorb) for the Pull Request!
 - added Wing 7 KPs
 
 V5.0 released (01.06.2019)
-- Thanks for more than 2.000 downloads! :)
+Thanks for more than 2.000 downloads! :)
 - custom hotkeys! Choose now between 57 possible hotkeys!
 - option to remove a hotkey assignmend (e.g. if the hotkey can't be used)
 - chat "blinking" fix option (only few users had this problem)
