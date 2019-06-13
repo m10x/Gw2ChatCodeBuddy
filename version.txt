@@ -1,1 +1,1 @@
-buddyversion: 5.0
+buddyversion: 5.1
