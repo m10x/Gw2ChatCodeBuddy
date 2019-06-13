@@ -1,7 +1,7 @@
 # Gw2 Chat Code Buddy
 [![Release](https://img.shields.io/github/release/m10x/gw2chatcodebuddy.svg?color=brightgreen)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Github Downloads](https://img.shields.io/github/downloads/m10x/gw2chatcodebuddy/total.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
-[![Size](https://img.shields.io/badge/size-5.79mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Size](https://img.shields.io/badge/size-6.47mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 
 ## Introduction
@@ -56,6 +56,10 @@ https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 ## Release notes:
+V5.1 released (13.06.2019)
+Thanks to [Keldorb](https://github.com/Keldorb) for the Pull Request!
+- added Wing 7 KPs
+
 V5.0 released (01.06.2019)
 - Thanks for more than 2.000 downloads! :)
 - custom hotkeys! Choose now between 57 possible hotkeys!
