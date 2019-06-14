@@ -17,7 +17,7 @@ You are just lazy and don't want to carry your LIs/LDs and KPs around with you a
 
 Then Gw2ChatCodeBuddy is what you need.
 It calculates the Chat Code for a certain amount of LIs, LDs, KPs or any other item chat code, copies it to the clipboard and emulates the key strokes "enter" and "left control" + "v" to post it.
-You can assign different amounts of LIs/LDs or KPs to the Hotkeys F1-F11.
+You can assign different amounts of LIs/LDs or KPs to the Hotkeys F1-F11 (or even to any other key).
 
 I'm currently learning Python and i wanted to do a script which may be useful for some people. :)  
 I use PyInstaller to pack the script into an executable. So you only have 1 file which you can easily use.
@@ -34,7 +34,7 @@ I use PyInstaller to pack the script into an executable. So you only have 1 file
 5. Choose amount
 6. Press "g" and enter to start (you can't use the console until you press P to pause the hotkeys)
 7. Click into Guild Wars 2
-8. Press F1-F11 to post the assigned chat code into the chat / P to pause hotkeys 
+8. Press the assigned hotkeys to post the dedicated chat code into the chat / P to pause hotkeys 
 9. ...
 10. Profit?
 
