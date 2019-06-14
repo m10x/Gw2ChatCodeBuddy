@@ -7,8 +7,9 @@
 1. [Introduction](#introduction)
 2. [Guide](#guide)
 3. [Known Problems](#known_problems)
-3. [Created using](#created_using)
-4. [Changelog](#changelog)
+4. [Created using](#created_using)
+5. [Donations](#donations)
+6. [Changelog](#changelog)
 
 ## Introduction <a name="introduction"></a>
 You got (good) Raid Experience but you can't get into a raid group because you don't have enough Legendary Insights? :pensive:  
@@ -62,6 +63,11 @@ tested on fresh installed win7 & 10
 [globalhotkeys.py](https://gist.github.com/m10x/a9a2eb296fab2106a5ae7c16b8874a4b) I forged it from [mdavey](https://gist.github.com/mdavey/6d40a89dbc15aefcc8cd) and improved it (it works now also great with python 3) ;)
 
 [key_define.py](https://stackoverflow.com/questions/14489013/simulate-python-keypresses-for-controlling-a-game) I've found it on stackoverflow and made it PEP8 compliant
+
+## Donations <a name="donations"></a>
+As i got asked a few times, you can donate via [PayPal](https://www.paypal.me/LowkeyFlex) to me.
+I've spend much of my spare time to create and update this program.
+Don't feel urged to donate, kind comments pay off even as much.
 
 ## Changelog <a name="release_notes"></a>
 V5.1 released (13.06.2019)
