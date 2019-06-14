@@ -6,6 +6,7 @@
 
 1. [Introduction](#introduction)
 2. [Guide](#guide)
+3. [Known Problems](#known_problems)
 3. [Created using](#created_using)
 4. [Changelog](#changelog)
 
@@ -43,17 +44,24 @@ By doing that, you can skip the steips 3. to 5. the next time you use it :)
 Notes: 
 - make sure you are in the right chat and that your chatbox isn't currently open
 
+## Known Problems <a name="known_problems"></a>
+
+### "The chatbox is only kind of blinking, but nothing gets pasted"
+Try to start Gw2ChatCodeBuddy.exe as administrator and try again.
+If it still doesn't work, try to increase the latency.
+Feel free to contact me, if you still have this problem, or if it could be resolved by following these steps.
+
+### "api-ms-win-crt-runtime-l1-1-0.dll is missing"
+Install windows updates. you can also get the needed .dll with an update from here:  
+https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows  
+tested on fresh installed win7 & 10
+
 ## Created using <a name="created_using"></a>
 [![PyInstaller](http://www.pyinstaller.org/_downloads/c2ec9d3ec62efa36a94f459a8e1454f7/pyinstaller-draft1a-35x35-trans.png)](http://www.pyinstaller.org/)  [PyInstaller](http://www.pyinstaller.org/) - to create executable
 
 [globalhotkeys.py](https://gist.github.com/m10x/a9a2eb296fab2106a5ae7c16b8874a4b) I forged it from [mdavey](https://gist.github.com/mdavey/6d40a89dbc15aefcc8cd) and improved it (it works now also great with python 3) ;)
 
 [key_define.py](https://stackoverflow.com/questions/14489013/simulate-python-keypresses-for-controlling-a-game) I've found it on stackoverflow and made it PEP8 compliant
-
-## "api-ms-win-crt-runtime-l1-1-0.dll is missing"
-install windows updates. you can also get the needed .dll with an update from here:  
-https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows  
-tested on fresh installed win7 & 10
 
 ## Changelog <a name="release_notes"></a>
 V5.1 released (13.06.2019)
