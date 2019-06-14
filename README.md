@@ -6,7 +6,8 @@
 
 1. [Introduction](#introduction)
 2. [Guide](#guide)
-3. [Changelog](#changelog)
+3. [Created using](#created_using)
+4. [Changelog](#changelog)
 
 ## Introduction <a name="introduction"></a>
 You got (good) Raid Experience but you can't get into a raid group because you don't have enough Legendary Insights? :pensive:  
@@ -42,14 +43,7 @@ By doing that, you can skip the steips 3. to 5. the next time you use it :)
 Notes: 
 - make sure you are in the right chat and that your chatbox isn't currently open
 
-## Currently working @
-? Tell me any suggestions
-
-## What Features are planned to be added
-- different Kill Proofs for each boss
-- ~legendary armour codes
-
-## Build with
+## Created using <a name="created_using"></a>
 [![PyInstaller](http://www.pyinstaller.org/_downloads/c2ec9d3ec62efa36a94f459a8e1454f7/pyinstaller-draft1a-35x35-trans.png)](http://www.pyinstaller.org/)  [PyInstaller](http://www.pyinstaller.org/) - to create executable
 
 [globalhotkeys.py](https://gist.github.com/m10x/a9a2eb296fab2106a5ae7c16b8874a4b) i forged it from [mdavey](https://gist.github.com/mdavey/6d40a89dbc15aefcc8cd) and improved it (works now also great with python 3.X) ;)
