@@ -6,7 +6,7 @@
 
 1. [Introduction](#introduction)
 2. [Guide](#guide)
-3. [Release notes](#release_notes)
+3. [Changelog](#changelog)
 
 ## Introduction <a name="introduction"></a>
 You got (good) Raid Experience but you can't get into a raid group because you don't have enough Legendary Insights? :pensive:  
@@ -59,7 +59,7 @@ install windows updates. you can also get the needed .dll with an update from he
 https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows  
 tested on fresh installed win7 & 10
 
-## Release notes <a name="release_notes"></a>
+## Changelog <a name="release_notes"></a>
 V5.1 released (13.06.2019)
 Thanks to [Keldorb](https://github.com/Keldorb) for the Pull Request!
 - added Wing 7 KPs
