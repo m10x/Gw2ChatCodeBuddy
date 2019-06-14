@@ -16,8 +16,8 @@ You already killed a Raid Boss but you don't have the Kill Proofs anymore? :pers
 You are just lazy and don't want to carry your LIs/LDs and KPs around with you and/or are too lazy to spam it? :smirk:
 
 Then Gw2ChatCodeBuddy is what you need.
-It calculates the Chat Code for a certain amount of LIs, LDs, KPs or any other item chat code, copies it to the clipboard and emulates the key strokes "enter" and "left control" + "v" to post it.
-You can assign different amounts of LIs/LDs or KPs to the Hotkeys F1-F11 (or even to any other key).
+It calculates the Chat Code for a certain amount of LIs, LDs, KPs or any other item chatcode, copies it to the clipboard and emulates the key strokes "enter" and "left control" + "v" to post it.
+You can assign different amounts of LIs/LDs, KPs or any other item chatcode to the Hotkeys F1-F11 (or even to any other key).
 
 I'm currently learning Python and i wanted to do a script which may be useful for some people. :)  
 I use PyInstaller to pack the script into an executable. So you only have 1 file which you can easily use.
