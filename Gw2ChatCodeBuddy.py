@@ -403,8 +403,8 @@ def liorkp(button):
                                     assign_button(button, "Silver Twin Largos Trophy", "[&AgEQWgEA]")
                                 elif inputUser == 4:
                                     assign_button(button, "Gold Twin Largos Trophy", "[&AgHuWQEA]")
-                                elif inputUser == 3:
-                                    assign_button(button, "Qadim KP", "[&AgFFWgEA]")
+                        elif inputUser == 3:
+                        	assign_button(button,"Qadim KP","[&AgFFWgEA]")
 
                 # W7 KPs
                 elif inputUser == 7:
