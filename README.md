@@ -58,7 +58,7 @@ https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-
 tested on fresh installed win7 & 10
 
 ## Created using <a name="created_using"></a>
-[![PyInstaller](http://www.pyinstaller.org/_downloads/c2ec9d3ec62efa36a94f459a8e1454f7/pyinstaller-draft1a-35x35-trans.png)](http://www.pyinstaller.org/)  [PyInstaller](http://www.pyinstaller.org/) - to create executable
+[![PyInstaller](https://www.pyinstaller.org/_downloads/1b658e206c3ac51319fcf6ad45cd591a/pyinstaller-draft1a-35x35-trans.png)](http://www.pyinstaller.org/)  [PyInstaller](http://www.pyinstaller.org/) - to create executable
 
 [globalhotkeys.py](https://gist.github.com/m10x/a9a2eb296fab2106a5ae7c16b8874a4b) I forged it from [mdavey](https://gist.github.com/mdavey/6d40a89dbc15aefcc8cd) and improved it (it works now also great with python 3) ;)
 
