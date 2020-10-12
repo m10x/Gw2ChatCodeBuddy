@@ -28,12 +28,14 @@ clipboard_tmp = ""
 
 
 def hit_enter():
+    """ key presses for hitting enter """
     PressKey(0x1c)
     ReleaseKey(0x1c)
     # time.sleep(timeOut) Falls immer noch blinken sollte
 
 
 def paste():
+    """ key presses for pasting """
     PressKey(0x1D)
     PressKey(0x2F)
     sleep(timeOut)
@@ -41,7 +43,15 @@ def paste():
     ReleaseKey(0x2F)
 
 
+def spam():
+    """ key presses for pasting into chat """
+    hit_enter()
+    paste()
+    hit_enter()    
+
+
 def configure_time():
+    """ let the user choose how fast the program should spam """
     global timeOut
     system('cls')
     logo()
@@ -68,6 +78,7 @@ def configure_time():
 
 
 def is_float(value):
+    """ Check if a value is a float """
     try:
         float(value)
         return True
@@ -76,6 +87,7 @@ def is_float(value):
 
 
 def is_int(value):
+    """ Check if a value is an int """
     try:
         int(value)
         return True
@@ -84,6 +96,7 @@ def is_int(value):
 
 
 def logo():
+    """ print the logo """
     print("""                  -::/://:::+sdss+:/so////+osssssssso+
                    ` .//+:-++++osydsooso+/+//+soossssssyyy
                   `:`:///-+o+ooyydhssysssso-   .+sooosssyy
@@ -113,6 +126,7 @@ def button_assignmend():
 
 
 def save_to_file():
+    """ save the settings to the config file """
     print("Saving config to .\gw2chatcodebuddy.config")
     try:
         with open("gw2chatcodebuddy.config", "w+") as f:
@@ -129,6 +143,7 @@ def save_to_file():
 
 
 def load_from_file():
+    """ load settings from the config file """
     try:
         with open("gw2chatcodebuddy.config", "r") as f:
             listButtons.clear()
@@ -148,6 +163,7 @@ def load_from_file():
 
 
 def check_in_list(_list, _data):
+    """ check if a value is in a list, return its index
     try:
         _index = _list.index(_data)
         return _index
@@ -196,6 +212,7 @@ def assign_button(button, itemname, itemcode, loading=False):
 
 
 def calculate(amount, itemcode):
+    """ change the amount of an item and return its chatcode """
     # calculate chat code
     # itemcode from base64 to hex
     hex_itemcode = b64decode(itemcode).hex()
@@ -209,12 +226,6 @@ def calculate(amount, itemcode):
     strb64 = str(b64)
     strb64 = strb64[:-1]
     return "[&"+strb64+"]"
-
-
-def spam():
-    hit_enter()
-    paste()
-    hit_enter()
 
 
 def customHotkey():
