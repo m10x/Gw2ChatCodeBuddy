@@ -84,25 +84,25 @@ def is_int(value):
 
 
 def logo():
-    print("                  -::/://:::+sdss+:/so////+osssssssso+")
-    print("               ` .//+:-++++osydsooso+/+//+soossssssyyy")
-    print("              `:`:///-+o+ooyydhssysssso-   .+sooosssyy")
-    print("              `//::/oo/:+ysy+odyyyyyyo-:.    -+oossyys")
-    print("               :/:/+/.-osyys/s:yyyyssooyyo/. `:ssyyyyy")
-    print("             `+o/:-:/+oysyyod/+hhhhhyhhhhys/. `syhdhso")
-    print("      :`  - .ohso++osyyssooshoyddddohddyso`    -hdhhyh")
-    print("      +o.`dsdhydhyhdy:./yy+hdyyddd-  :o/-`     `syhddd")
-    print("      `:ohmhmmdhddo+-  +yosydsydd-             .+ddddd")
-    print("      .sydymNNdy.``   `hhy/.hhhm+               :ddddd")
-    print("       :ydmdy/`       +dy. `osdNs.             .hddddh")
-    print("         `-:-       `+h:   -/omNdh+``         `:ymddhh")
-    print("                `-/+:.    `:+so+`   `.        +dddddhy")
-    print("         ````.-:/.                         `odmddhyhhy")
-    print("   ___ _         _    ___         _     ___         _    _      ")
-    print("  / __| |_  __ _| |_ / __|___  __| |___| _ )_  _ __| |__| |_  _ ")
-    print(" | (__| ' \/ _` |  _| (__/ _ \/ _` / -_) _ \ || / _` / _` | || |")
-    print("  \___|_||_\__,_|\__|\___\___/\__,_\___|___/\_,_\__,_\__,_|\_, |")
-    print("                                                           |__/ ")
+    print("""                  -::/://:::+sdss+:/so////+osssssssso+
+                   ` .//+:-++++osydsooso+/+//+soossssssyyy
+                  `:`:///-+o+ooyydhssysssso-   .+sooosssyy
+                  `//::/oo/:+ysy+odyyyyyyo-:.    -+oossyys
+                   :/:/+/.-osyys/s:yyyyssooyyo/. `:ssyyyyy
+                 `+o/:-:/+oysyyod/+hhhhhyhhhhys/. `syhdhso
+          :`  - .ohso++osyyssooshoyddddohddyso`    -hdhhyh
+          +o.`dsdhydhyhdy:./yy+hdyyddd-  :o/-`     `syhddd
+          `:ohmhmmdhddo+-  +yosydsydd-             .+ddddd
+          .sydymNNdy.``   `hhy/.hhhm+               :ddddd
+           :ydmdy/`       +dy. `osdNs.             .hddddh
+             `-:-       `+h:   -/omNdh+``         `:ymddhh
+                    `-/+:.    `:+so+`   `.        +dddddhy
+             ````.-:/.                         `odmddhyhhy
+       ___ _         _    ___         _     ___         _    _      
+      / __| |_  __ _| |_ / __|___  __| |___| _ )_  _ __| |__| |_  _ 
+     | (__| ' \/ _` |  _| (__/ _ \/ _` / -_) _ \ || / _` / _` | || |
+      \___|_||_\__,_|\__|\___\___/\__,_\___|___/\_,_\__,_\__,_|\_, |
+                                                               |__/ """)
 
 
 def button_assignmend():
