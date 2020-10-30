@@ -163,7 +163,7 @@ def load_from_file():
 
 
 def check_in_list(_list, _data):
-    """ check if a value is in a list, return its index
+    """ check if a value is in a list, return its index """
     try:
         _index = _list.index(_data)
         return _index
