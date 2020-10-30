@@ -54,8 +54,8 @@ Notes:
 3. Extract the Zip 
 4. Inside Project Folder open Powershell as Admin 
 5. Run following commands:
-pip install --upgrade -r requirements.txt
-pyinstaller .\Gw2ChatCodeBuddy.py --clean --onefile
+5.1 pip install --upgrade -r requirements.txt
+5.2 pyinstaller .\Gw2ChatCodeBuddy.py --clean --onefile
 6. Your exe is now in the folder dist
 
 ## Known Problems <a name="known_problems"></a>
