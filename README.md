@@ -48,11 +48,11 @@ Notes:
 - make sure you are in the right chat and that your chatbox isn't currently open
 
 ## Create the .exe yourself <a name="exe"></a>
-[YouTube Tutorial :)](https://youtu.be/G6q5eWTk3ms)
--> Install Python 3.7
--> Download Project as Zip
--> Extract the Zip
--> Inside Project Folder open Powershell as Admin
+[YouTube Tutorial :)](https://youtu.be/G6q5eWTk3ms) 
+-> Install Python 3.7 
+-> Download Project as Zip 
+-> Extract the Zip 
+-> Inside Project Folder open Powershell as Admin 
 -> Run following commands:
 pip install --upgrade -r requirements.txt
 pyinstaller .\Gw2ChatCodeBuddy.py --clean --onefile
