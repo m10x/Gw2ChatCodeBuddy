@@ -1,7 +1,7 @@
 # Gw2 Chat Code Buddy
 [![Release](https://img.shields.io/github/release/m10x/gw2chatcodebuddy.svg?color=brightgreen)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Github Downloads](https://img.shields.io/github/downloads/m10x/gw2chatcodebuddy/total.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
-[![Size](https://img.shields.io/badge/size-6.47mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
+[![Size](https://img.shields.io/badge/size-7.02mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
 [![Donate](https://img.shields.io/badge/Donate-Coffee-blue.svg)](https://www.buymeacoffee.com/m10xde)
 
@@ -71,6 +71,10 @@ I've spend much of my spare time to create and update this program.
 Don't feel urged to donate, kind comments pay off even as much.
 
 ## Changelog <a name="release_notes"></a>
+V5.2 released (30.10.2020)
+- fixed W6 Qadim kill proof (thanks to SanderWasser, Heycate, TanguyMrtn and Griftnix)!!
+- various code improvements and beautifications
+
 V5.1 released (13.06.2019)
 Thanks to [Keldorb](https://github.com/Keldorb) for the Pull Request!
 - added Wing 7 KPs
