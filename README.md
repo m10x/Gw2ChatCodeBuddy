@@ -3,6 +3,7 @@
 [![Github Downloads](https://img.shields.io/github/downloads/m10x/gw2chatcodebuddy/total.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Size](https://img.shields.io/badge/size-6.47mb-brightgreen.svg)](https://github.com/LowkeyFlex/Gw2ChatCodeBuddy/releases)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/LowkeyFlex)
+[![Donate](https://img.shields.io/badge/Donate-Coffee-blue.svg)](https://www.buymeacoffee.com/m10xde)
 
 1. [Introduction](#introduction)
 2. [Guide](#guide)
