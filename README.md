@@ -49,14 +49,14 @@ Notes:
 
 ## Create the .exe yourself <a name="exe"></a>
 [YouTube Tutorial :)](https://youtu.be/G6q5eWTk3ms) 
--> Install Python 3.7 
--> Download Project as Zip 
--> Extract the Zip 
--> Inside Project Folder open Powershell as Admin 
--> Run following commands:
+1. Install Python 3.7 
+2. Download Project as Zip 
+3. Extract the Zip 
+4. Inside Project Folder open Powershell as Admin 
+5. Run following commands:
 pip install --upgrade -r requirements.txt
 pyinstaller .\Gw2ChatCodeBuddy.py --clean --onefile
--> Your exe is now in the folder dist
+6. Your exe is now in the folder dist
 
 ## Known Problems <a name="known_problems"></a>
 
