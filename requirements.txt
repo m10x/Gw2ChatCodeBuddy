@@ -1,0 +1,5 @@
+pyinstaller
+pywin32
+requests
+pyperclip
+natsort
