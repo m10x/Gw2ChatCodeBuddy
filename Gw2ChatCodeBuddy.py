@@ -16,7 +16,7 @@ from natsort import index_natsorted
 
 
 # VERSION
-version = "5.1"
+version = "5.2"
 system('mode con: cols=99 lines=40')
 
 listButtons = []
