@@ -7,10 +7,11 @@
 
 1. [Introduction](#introduction)
 2. [Guide](#guide)
-3. [Known Problems](#known_problems)
-4. [Created using](#created_using)
-5. [Donations](#donations)
-6. [Changelog](#changelog)
+3. [Create the .exe yourself](#exe)
+4. [Known Problems](#known_problems)
+5. [Created using](#created_using)
+6. [Donations](#donations)
+7. [Changelog](#changelog)
 
 ## Introduction <a name="introduction"></a>
 You got (good) Raid Experience but you can't get into a raid group because you don't have enough Legendary Insights? :pensive:  
@@ -46,6 +47,17 @@ By doing that, you can skip the steips 3. to 5. the next time you use it :)
 Notes: 
 - make sure you are in the right chat and that your chatbox isn't currently open
 
+## Create the .exe yourself <a name="exe"></a>
+[YouTube Tutorial :)](https://youtu.be/G6q5eWTk3ms)
+-> Install Python 3.7
+-> Download Project as Zip
+-> Extract the Zip
+-> Inside Project Folder open Powershell as Admin
+-> Run following commands:
+pip install --upgrade -r requirements.txt
+pyinstaller .\Gw2ChatCodeBuddy.py --clean --onefile
+-> Your exe is now in the folder dist
+
 ## Known Problems <a name="known_problems"></a>
 
 ### "The chatbox is only kind of blinking, but nothing gets pasted"
@@ -66,7 +78,7 @@ tested on fresh installed win7 & 10
 [key_define.py](https://stackoverflow.com/questions/14489013/simulate-python-keypresses-for-controlling-a-game) I've found it on stackoverflow and made it PEP8 compliant
 
 ## Donations <a name="donations"></a>
-As i got asked a few times, you can donate via [PayPal](https://www.paypal.me/LowkeyFlex) to me.
+As i got asked a few times, you can donate via [PayPal](https://www.paypal.me/LowkeyFlex) or [BuyMeACoffee](https://www.buymeacoffee.com/m10xde) to me.
 I've spend much of my spare time to create and update this program.
 Don't feel urged to donate, kind comments pay off even as much.
 
